@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import CubeLogo from './CubeLogo'
 import { useI18n, type Lang } from '../i18n'
+import { createNavScroll } from './navScroll'
 
 const EASE = 'cubic-bezier(0.22,1,0.36,1)'
 
@@ -30,6 +31,7 @@ export default function Navbar() {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
 
   const LINKS = [
     { label: t.nav.features, href: '#features' },
@@ -38,7 +40,22 @@ export default function Navbar() {
   ]
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const read = createNavScroll()
+
+    // No rAF throttle: scroll events already arrive at most once per frame,
+    // and deferring costs a frame of latency on exactly the gesture that is
+    // supposed to feel immediate. Nothing here reads layout, so there is
+    // nothing to batch — the position comes from the scroll offset alone.
+    const onScroll = () => {
+      // Clamped at zero only. iOS rubber-banding reports negative offsets past
+      // the top, which would otherwise read as scrolling up. Overscroll past
+      // the bottom needs no such care: it reads as downward travel, and the
+      // bar is already hidden there.
+      const next = read(Math.max(window.scrollY, 0))
+      setHidden(next.hidden)
+      setScrolled(next.scrolled)
+    }
+
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -54,9 +71,22 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-500 ${
+        // A keyboard user can tab into the bar while it is off-screen, where
+        // no amount of scrolling can bring it into view. Bring it back instead.
+        onFocusCapture={() => setHidden(false)}
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 ${
           scrolled ? 'py-3.5 bg-[#06140d]/55 backdrop-blur-xl border-b border-white/5' : 'py-5'
         }`}
+        style={{
+          // Never while the menu is open — the panel is anchored to this bar.
+          transform: hidden && !open ? 'translateY(-100%)' : 'translateY(0)',
+          // Written out rather than `transition-all`: the slide wants to be
+          // quicker than the chrome settling into its scrolled state.
+          transition:
+            `transform 380ms ${EASE}, padding 500ms ${EASE},` +
+            ` background-color 500ms ${EASE}, border-color 500ms ${EASE}`,
+          willChange: 'transform',
+        }}
       >
         {/* Brand */}
         <a href="#top" className="flex items-center gap-2.5 group shrink-0">

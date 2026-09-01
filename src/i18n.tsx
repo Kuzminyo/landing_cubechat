@@ -119,7 +119,7 @@ const uk = {
     kicker: 'Криптографія',
     title: { a: 'Не «повірте нам». ', em: 'Перевірте.', b: '' },
     intro:
-      'Кожен примітив — з перевірених бібліотек і закріплений відомими тестовими векторами. Обгортка відкрита й у репозиторії — читайте, а не просто вірте.',
+      'Кожен примітив — з перевірених бібліотек і закріплений відомими тестовими векторами.',
     envelopeTitle: 'Дворівневий конверт',
     outer: 'зовнішній шифр',
     outerDesc: 'SealedBox · X3DH · канал — вузли маршрутизують, не розшифровують',
@@ -307,7 +307,7 @@ const en: Dict = {
     kicker: 'Cryptography',
     title: { a: 'Not “trust us”. ', em: 'Verifiable.', b: '' },
     intro:
-      "Every primitive comes from vetted libraries and is pinned to known-answer test vectors. The framing is open and in-repo — read it, don't just believe it.",
+      "Every primitive comes from vetted libraries and is pinned to known-answer test vectors.",
     envelopeTitle: 'Two-tier envelope',
     outer: 'outer cipher',
     outerDesc: 'SealedBox · X3DH · channel — relays route, never decrypt',

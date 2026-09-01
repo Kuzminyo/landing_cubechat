@@ -8,9 +8,6 @@ Files served by the **Download** section. The iOS button links here with an HTML
 | Android | `Kuzminyo/cubechat` release `apk-latest` | `cubechat-universal.apk`, built by CI on every green main. Not in this repo. |
 | iOS     | `cubechat-ios-sideload.txt`               | Sideload guide (no signed .ipa is distributable). |
 
-`cubechat-0.1.0-source.zip` is still here but nothing links to it any more — the
-"build from source" button is gone. Delete it when you are sure.
-
 ## Regenerate
 
 Only the iOS guide lives here, and it is hand-written. The Android APK comes

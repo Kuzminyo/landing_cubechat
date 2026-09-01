@@ -29,14 +29,24 @@ export default function Hero() {
 
       {/* Center content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 pt-16">
+        {/* On a phone the badge is wider than the screen and wraps to two lines.
+            Centred rather than left-aligned, or the second line hangs off the
+            middle of a capsule that is itself centred. `shrink-0` keeps the dot
+            round once the text starts competing for width. */}
         <div
-          className="mb-7 flex items-center gap-2.5 liquid-glass rounded-full px-4 py-1.5"
+          className="mb-7 flex items-center justify-center gap-2.5 liquid-glass rounded-full px-4 py-1.5 max-w-full"
           style={{ animation: 'float-slow 7s ease-in-out infinite' }}
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#2edb8f] shadow-[0_0_10px_2px_rgba(46,219,143,0.8)]" />
-          <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-white/70">
+          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#2edb8f] shadow-[0_0_10px_2px_rgba(46,219,143,0.8)]" />
+          {/* The negative right margin cancels the trailing letter-space that
+              `tracking` adds after the final character, which otherwise pushes
+              centred text visibly left of centre. */}
+          <span className="-mr-[0.22em] text-center font-mono text-[11px] tracking-[0.22em] uppercase text-white/70">
             {t.hero.badge}
           </span>
+          {/* Balances the dot so the text centres on the capsule rather than on
+              the space the dot leaves over. */}
+          <span aria-hidden className="h-1.5 w-1.5 shrink-0" />
         </div>
 
         <h1 className="font-instrument text-white text-[34px] md:text-6xl lg:text-[80px] leading-[0.95] tracking-tight text-center text-glow-white max-w-[15ch] whitespace-pre-line">

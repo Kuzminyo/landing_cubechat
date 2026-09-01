@@ -156,8 +156,6 @@ const uk = {
     android: 'Android',
     iosTop: 'Сайдлоад для',
     ios: 'iOS',
-    sourceTop: 'Зібрати з',
-    source: 'коду',
     note: 'Android і iOS використовують справжній Bluetooth · веб і десктоп лише інтерфейс',
   },
   footer: {
@@ -349,8 +347,6 @@ const en: Dict = {
     android: 'Android',
     iosTop: 'Sideload for',
     ios: 'iOS',
-    sourceTop: 'Build from',
-    source: 'Source',
     note: 'Android & iOS use real Bluetooth · web & desktop run the UI only',
   },
   footer: {

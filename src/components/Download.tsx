@@ -3,11 +3,21 @@ import CubeLogo from './CubeLogo'
 import { Kicker } from './ui'
 import { useI18n } from '../i18n'
 
-// Per-platform downloadable files live in public/downloads/.
-// Swap the APK / iOS artifact for freshly-built ones when you cut a release.
-const ANDROID = { href: '/downloads/cubechat-0.1.0.apk', file: 'cubechat-0.1.0.apk' }
+// The APK is not served from this repository. It is 56 MB of build output, and
+// this site is built in CI from what is committed — so a locally regenerated
+// APK never reaches the deploy and the button 404s. The app repository's
+// android.yml already publishes every green build of main to a rolling
+// `apk-latest` prerelease, which is a real URL that is always current.
+//
+// The universal build, not a per-ABI one: it carries arm64, arm32 and x86_64
+// at the cost of size, and picking wrong on a download button means an install
+// that succeeds and an app that dies on launch.
+const ANDROID = {
+  href: 'https://github.com/Kuzminyo/cubechat/releases/download/apk-latest/cubechat-universal.apk',
+}
+
+// Small enough to live here, and it is text rather than a build artifact.
 const IOS = { href: '/downloads/cubechat-ios-sideload.txt', file: 'cubechat-ios-sideload.txt' }
-const SOURCE = { href: '/downloads/cubechat-0.1.0-source.zip', file: 'cubechat-0.1.0-source.zip' }
 
 function StoreButton({
   href,
@@ -18,7 +28,9 @@ function StoreButton({
   primary = false,
 }: {
   href: string
-  download: string
+  // Cross-origin links ignore this attribute; GitHub sends the release asset
+  // with Content-Disposition: attachment, which saves the file anyway.
+  download?: string
   glyph: ReactNode
   top: string
   bottom: string
@@ -68,7 +80,6 @@ export default function Download() {
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-3.5">
             <StoreButton
               href={ANDROID.href}
-              download={ANDROID.file}
               primary
               top={t.download.androidTop}
               bottom={t.download.android}
@@ -83,15 +94,6 @@ export default function Download() {
               bottom={t.download.ios}
               glyph={
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85-.7 0-1.85-.83-3-.8-1.55.02-3 .9-3.8 2.3-1.6 2.8-.4 7 1.15 9.3.76 1.13 1.66 2.4 2.85 2.35 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2-1.14 2.76-2.28.87-1.3 1.23-2.57 1.25-2.64-.03-.01-2.4-.92-2.42-3.64ZM14.13 6.1c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.09 1.76-.95 2.8 1.02.08 2.05-.51 2.68-1.27Z" /></svg>
-              }
-            />
-            <StoreButton
-              href={SOURCE.href}
-              download={SOURCE.file}
-              top={t.download.sourceTop}
-              bottom={t.download.source}
-              glyph={
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 5l-2 14" /></svg>
               }
             />
           </div>

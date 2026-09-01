@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Two pages, both hand-listed. `lastmod` is not generated, so it is a claim
+  that has to be kept honest: bump the date here when a page's content
+  changes. A lastmod that drifts from reality is worse than none — Google
+  stops trusting the file rather than just that one date.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://cubechat.tech/</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://cubechat.tech/privacy.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+</urlset>

@@ -1,35 +1,66 @@
 name: Deploy landing to GitHub Pages
 
+# The site is built here rather than served from the branch. Pages used to
+# publish this repository's root as static files, which meant the browser was
+# handed the unbundled index.html and asked for /src/main.tsx — a file that
+# only exists before a build. The result was a white page with a correct title.
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# `pages` to deploy, `id-token` for the deployment's attestation.
+# `contents: read` stays least-privilege — nothing here writes to the repo.
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# One deployment at a time, and a queued one is not cancelled: the last push
+# should win, and cancelling in-progress would leave whichever finished first
+# as the live site.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - name: Set up Node
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: '22'
           cache: npm
 
-      - run: npm ci
-      - run: npm run build
+      # `ci` rather than `install`: it installs exactly what the lock file says
+      # and fails if the two disagree, which is the difference between a build
+      # that reproduces and one that merely succeeds.
+      - name: Install
+        run: npm ci
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      # No base path to set: on cubechat.tech the site is the whole origin, so
+      # vite's default base of `/` is right. If the custom domain is ever
+      # dropped and the site moves back to kuzminyo.github.io/landing_cubechat/,
+      # it lives in a folder and a base of `/` gives a page whose HTML loads and
+      # whose every asset 404s — the base and the domain are one decision.
+      #
+      # The domain itself is public/CNAME, which Vite copies into dist/. Pages
+      # reads it from the deployed site, so it survives a redeploy and lives in
+      # version control where it can be reviewed.
+      - name: Build
+        run: npm run build
+
+      # Pages has to be enabled on the repository once, by hand
+      # (Settings → Pages → Source: GitHub Actions). This step only reads it.
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload the built site
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -38,7 +69,17 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy
+        id: deploy
+        uses: actions/deploy-pages@v5
+
+      - name: Where it went
+        run: |
+          {
+            echo "## Landing site deployed"
+            echo ""
+            echo "- ${{ steps.deploy.outputs.page_url }}"
+            echo "- Commit: \`${{ github.sha }}\`"
+          } >> $GITHUB_STEP_SUMMARY

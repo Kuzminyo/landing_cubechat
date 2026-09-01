@@ -144,9 +144,9 @@ const uk = {
     // Three paragraphs, not one: the section gives this a whole screen, and a
     // single block at that size reads as a wall rather than as a thought.
     quote: [
-      'Вимкнули світло. Впала вежа. Тисяча людей на площі — і смуга, поділена на всіх до нуля. Саме тоді застосунок, який тримається на чиємусь сервері, стає просто іконкою.',
-      'cubechat влаштований інакше. Кожен телефон поруч — це вузол: він приймає ваше повідомлення, передає далі й ніколи його не відкриває. Мережа не десь там — вона між вами, у цій кімнаті, на цій вулиці.',
-      'Ні акаунта, ні номера, ні реєстрації. Тільки ключ, що з’явився на вашому телефоні, і люди, які опинилися поруч.',
+      'Вимкнули світло. Темрява. Тисяча людей залишилися без зв’язку, без мережі і — найголовніше — без змоги поговорити з рідними та друзями. Саме тоді застосунок, який тримається на чиємусь сервері, стає просто іконкою.',
+      'cubechat влаштований інакше. Кожен телефон поруч — це вузол, а разом вони плетуть власне павутиння: приймають ваші повідомлення, передають їх далі й ніколи не відкривають. Мережа не десь там — вона між вами, у цій кімнаті, на цій вулиці, у місті. А слабкий інтернет тут не завада: обірване з’єднання відновлюється саме, розмова підхоплюється з того місця, де спинилася, а не завантажується заново, і повідомлення для того, хто зараз поза зоною, чекає зашифрованим, доки він не з’явиться. Нічого з цього не треба вмикати.',
+      'Ні акаунта, ні номера, ні реєстрації. Немає профілю, який можна заблокувати. Немає сервера, який можна вилучити. Немає номера, який можна пов’язати з вами. Тільки ключ, що з’явився на вашому телефоні, і люди, які опинилися поруч, — і цього достатньо.',
     ],
     attribution: 'Проєкт cubechat',
   },
@@ -335,9 +335,9 @@ const en: Dict = {
   },
   philosophy: {
     quote: [
-      'The power goes out. A tower falls. A thousand people in one square, and the bandwidth between them split down to nothing. That is the moment an app resting on somebody’s server becomes an icon and nothing more.',
-      'cubechat is built the other way round. Every phone nearby is a node: it takes your message, carries it further, and never opens it. The network isn’t somewhere else — it is between you, in this room, on this street.',
-      'No account, no number, no sign-up. Only the key that appeared on your phone, and the people who happen to be near.',
+      'The lights go out. Darkness. A thousand people left without a signal, without a network and — above all — without a way to reach the people they love. That is the moment an app resting on somebody’s server becomes an icon and nothing more.',
+      'cubechat is built the other way round. Every phone nearby is a node, and together they weave a web of their own: they take your messages, carry them onward, and never open them. The network isn’t somewhere else — it is between you, in this room, on this street, across the city. A weak connection is no obstacle either: a dropped link restores itself, a conversation picks up where it stopped rather than loading again, and a message for someone out of range waits encrypted until they return. None of this has to be switched on.',
+      'No account, no number, no sign-up. There is no profile to suspend. No server to seize. No number to tie to you. Only the key that appeared on your phone, and the people who happen to be near — and that is enough.',
     ],
     attribution: 'The cubechat project',
   },

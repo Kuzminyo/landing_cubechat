@@ -70,7 +70,11 @@ export default function Philosophy() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      // Vertical padding, not just min-height: the text outgrows a short phone
+      // screen, and without it the section shrink-wraps the paragraphs so they
+      // sit directly under the gradient fades at either edge. py-32 matches
+      // those fades exactly, so the first line starts where they end.
+      className="relative flex min-h-screen items-center justify-center overflow-hidden py-32"
       style={{
         background:
           'linear-gradient(180deg, #02100a 0%, #063a29 38%, #0b6b4d 72%, #17b981 100%)',
@@ -108,11 +112,11 @@ export default function Philosophy() {
           the drama here belongs to the gradient rather than to the type. */}
       <div className="relative z-20 mx-auto max-w-3xl px-6 text-center">
         <blockquote
-          className="font-section text-white text-base leading-[1.6] sm:text-lg md:text-xl lg:text-[22px] md:leading-[1.6]"
+          className="font-section text-white text-[15px] leading-[1.65] sm:text-lg sm:leading-[1.6] md:text-xl lg:text-[22px] md:leading-[1.6]"
           style={{ fontWeight: 500 }}
         >
           {t.philosophy.quote.map((para, i) => (
-            <p key={para} className={i === 0 ? '' : 'mt-5 md:mt-6'}>
+            <p key={para} className={i === 0 ? '' : 'mt-4 sm:mt-5 md:mt-6'}>
               {para}
             </p>
           ))}

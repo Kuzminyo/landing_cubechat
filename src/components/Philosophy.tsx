@@ -103,12 +103,19 @@ export default function Philosophy() {
       <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-32 bg-gradient-to-b from-[#06140d] to-transparent" />
 
       {/* Quote */}
-      <div className="relative z-20 mx-auto max-w-4xl px-6 text-center">
+      {/* Narrower and a size down from the single-sentence version this used to
+          hold: three paragraphs need a line short enough to return from, and
+          the drama here belongs to the gradient rather than to the type. */}
+      <div className="relative z-20 mx-auto max-w-3xl px-6 text-center">
         <blockquote
-          className="font-section text-white text-lg leading-[1.55] sm:text-xl md:text-2xl lg:text-[26px] md:leading-[1.55]"
+          className="font-section text-white text-base leading-[1.6] sm:text-lg md:text-xl lg:text-[22px] md:leading-[1.6]"
           style={{ fontWeight: 500 }}
         >
-          {t.philosophy.quote}
+          {t.philosophy.quote.map((para, i) => (
+            <p key={para} className={i === 0 ? '' : 'mt-5 md:mt-6'}>
+              {para}
+            </p>
+          ))}
         </blockquote>
         <div className="mt-7 font-mono text-sm tracking-wide text-white/80 md:mt-9">
           {t.philosophy.attribution}

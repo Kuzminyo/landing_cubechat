@@ -141,8 +141,13 @@ const uk = {
       'Групові канали мають один симетричний ключ — без прямої секретності для кожного відправника (для цього потрібен груповий протокол на кшталт MLS, поза межами). Автентичність автора все одно тримається на підписі Ed25519. Краще ми скажемо, ніж ви припускатимете.',
   },
   philosophy: {
-    quote:
-      '«cubechat постав із простої відмови — що зв’язок із людьми поруч не має вимагати компанії посередині. Жодного акаунта, жодного сервера, якому треба довіряти, жодного номера. Лише телефони в кімнаті, мережа між ними й шифрування, яке можна прочитати самому. Приватність не має бути налаштуванням. Вона має бути самою суттю.»',
+    // Three paragraphs, not one: the section gives this a whole screen, and a
+    // single block at that size reads as a wall rather than as a thought.
+    quote: [
+      'Вимкнули світло. Впала вежа. Тисяча людей на площі — і смуга, поділена на всіх до нуля. Саме тоді застосунок, який тримається на чиємусь сервері, стає просто іконкою.',
+      'cubechat влаштований інакше. Кожен телефон поруч — це вузол: він приймає ваше повідомлення, передає далі й ніколи його не відкриває. Мережа не десь там — вона між вами, у цій кімнаті, на цій вулиці.',
+      'Ні акаунта, ні номера, ні реєстрації. Тільки ключ, що з’явився на вашому телефоні, і люди, які опинилися поруч.',
+    ],
     attribution: 'Проєкт cubechat',
   },
   download: {
@@ -329,8 +334,11 @@ const en: Dict = {
       "Group channels share one symmetric key — no per-sender forward secrecy (that needs a group protocol like MLS, out of scope). Author authenticity still holds via the Ed25519 signature. We'd rather tell you than let you assume.",
   },
   philosophy: {
-    quote:
-      '“cubechat was built on a simple refusal — that reaching the people around you should not require a company in the middle. No account to create, no server to trust, no number to hand over. Just the phones in the room, the mesh between them, and encryption you can read for yourself. Privacy shouldn’t be a setting. It should be the shape of the thing.”',
+    quote: [
+      'The power goes out. A tower falls. A thousand people in one square, and the bandwidth between them split down to nothing. That is the moment an app resting on somebody’s server becomes an icon and nothing more.',
+      'cubechat is built the other way round. Every phone nearby is a node: it takes your message, carries it further, and never opens it. The network isn’t somewhere else — it is between you, in this room, on this street.',
+      'No account, no number, no sign-up. Only the key that appeared on your phone, and the people who happen to be near.',
+    ],
     attribution: 'The cubechat project',
   },
   download: {

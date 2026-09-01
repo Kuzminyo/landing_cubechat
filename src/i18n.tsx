@@ -11,7 +11,6 @@ const uk = {
     features: 'Можливості',
     how: 'Як це працює',
     security: 'Безпека',
-    source: 'Код',
     cta: 'Встановити',
     menuOpen: 'Відкрити меню',
     menuClose: 'Закрити меню',
@@ -37,7 +36,6 @@ const uk = {
     'багатохопова ретрансляція',
     'AES-шифрування на диску',
     'анонімність за замовчуванням',
-    'відкритий код',
   ],
   how: {
     kicker: 'Як це працює',
@@ -145,7 +143,7 @@ const uk = {
   philosophy: {
     quote:
       '«cubechat постав із простої відмови — що зв’язок із людьми поруч не має вимагати компанії посередині. Жодного акаунта, жодного сервера, якому треба довіряти, жодного номера. Лише телефони в кімнаті, мережа між ними й шифрування, яке можна прочитати самому. Приватність не має бути налаштуванням. Вона має бути самою суттю.»',
-    attribution: 'Проєкт cubechat — відкритий код',
+    attribution: 'Проєкт cubechat',
   },
   download: {
     kicker: 'Почати',
@@ -183,7 +181,6 @@ const uk = {
       {
         head: 'Проєкт',
         links: [
-          { label: 'Натхнено bitchat ↗', href: 'https://github.com/permissionlesstech/bitchat' },
           { label: 'Зроблено на Flutter ↗', href: 'https://flutter.dev' },
           { label: 'Дорожня карта', href: '#' },
           { label: 'Конфіденційність', href: '/privacy.html' },
@@ -202,7 +199,6 @@ const en: Dict = {
     features: 'Features',
     how: 'How it works',
     security: 'Security',
-    source: 'Source',
     cta: 'Get the app',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
@@ -228,7 +224,6 @@ const en: Dict = {
     'multi-hop mesh relay',
     'AES-encrypted at rest',
     'anonymous by default',
-    'open source',
   ],
   how: {
     kicker: 'How it works',
@@ -336,7 +331,7 @@ const en: Dict = {
   philosophy: {
     quote:
       '“cubechat was built on a simple refusal — that reaching the people around you should not require a company in the middle. No account to create, no server to trust, no number to hand over. Just the phones in the room, the mesh between them, and encryption you can read for yourself. Privacy shouldn’t be a setting. It should be the shape of the thing.”',
-    attribution: 'The cubechat project — open source',
+    attribution: 'The cubechat project',
   },
   download: {
     kicker: 'Get started',
@@ -374,7 +369,6 @@ const en: Dict = {
       {
         head: 'Project',
         links: [
-          { label: 'Inspired by bitchat ↗', href: 'https://github.com/permissionlesstech/bitchat' },
           { label: 'Built with Flutter ↗', href: 'https://flutter.dev' },
           { label: 'Roadmap', href: '#' },
           { label: 'Privacy', href: '/privacy.html' },

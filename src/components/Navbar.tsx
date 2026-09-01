@@ -35,7 +35,6 @@ export default function Navbar() {
     { label: t.nav.features, href: '#features' },
     { label: t.nav.how, href: '#how' },
     { label: t.nav.security, href: '#security' },
-    { label: t.nav.source, href: 'https://github.com/permissionlesstech/bitchat' },
   ]
 
   useEffect(() => {

@@ -1,7 +1,8 @@
 # cubechat — landing
 
-Marketing site for **cubechat**, built as a separate React + Vite + TypeScript +
-Tailwind app so it stays out of the Flutter tree (`../web/` belongs to Flutter).
+Marketing site for **cubechat**, a separate React + Vite + TypeScript + Tailwind
+app in its own repository so it stays out of the Flutter tree. The app itself
+lives in `Kuzminyo/cubechat`; this repository owns the domain, cubechat.tech.
 
 Design language: *editorial cryptography* — deep-green glass, a living BLE-mesh
 backdrop, heavy Manrope display type with an emerald glow, JetBrains Mono for
@@ -12,7 +13,6 @@ technical accents. Palette is pulled straight from the app
 ## Run
 
 ```bash
-cd landing
 npm install
 npm run dev        # http://localhost:5173 (or the printed port)
 npm run build      # type-check + production bundle → dist/

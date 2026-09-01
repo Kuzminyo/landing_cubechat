@@ -3,7 +3,7 @@ import CubeLogo from './CubeLogo'
 import { Kicker } from './ui'
 import { useI18n } from '../i18n'
 
-// Per-platform downloadable files live in landing/public/downloads/.
+// Per-platform downloadable files live in public/downloads/.
 // Swap the APK / iOS artifact for freshly-built ones when you cut a release.
 const ANDROID = { href: '/downloads/cubechat-0.1.0.apk', file: 'cubechat-0.1.0.apk' }
 const IOS = { href: '/downloads/cubechat-ios-sideload.txt', file: 'cubechat-ios-sideload.txt' }

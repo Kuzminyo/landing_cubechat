@@ -1,11 +1,58 @@
+import { useEffect, useRef, useState } from 'react'
 import MeshBackground from './MeshBackground'
 import { PrimaryButton, GhostButton } from './ui'
 import { useI18n } from '../i18n'
 
+// Served as a plain file out of `public/` rather than imported, so the picture
+// can be swapped without touching the bundle.
+const HERO_PHOTO = '/hero-bg.jpg'
+
 export default function Hero() {
   const { t } = useI18n()
+  // The darkening wash and the dimmed mesh only make sense once there actually
+  // is a photograph behind them, so nothing switches on until the file has
+  // loaded: a missing or still-loading photo leaves the hero looking exactly as
+  // it did before, rather than as a murky version of itself.
+  const [photo, setPhoto] = useState(false)
+  const photoRef = useRef<HTMLImageElement>(null)
+
+  // A photo already in cache finishes loading before React attaches `onLoad`,
+  // and that event then never fires — so the element is asked directly once on
+  // mount. Without this a reload shows the un-photographed hero.
+  useEffect(() => {
+    const img = photoRef.current
+    if (img?.complete && img.naturalWidth > 0) setPhoto(true)
+  }, [])
+
   return (
     <section id="top" className="relative h-screen w-full overflow-hidden">
+      {/* Photograph — the bottom-most layer, fading in so it never pops. An
+          <img> rather than a CSS background: the browser then treats it as the
+          hero's real image and can fetch it early, and a file that fails to
+          load simply stays at zero opacity. */}
+      <img
+        ref={photoRef}
+        src={HERO_PHOTO}
+        alt=""
+        aria-hidden
+        decoding="async"
+        onLoad={() => setPhoto(true)}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700"
+        style={{ opacity: photo ? 1 : 0 }}
+      />
+
+      {/* Pulls whatever the picture happens to be into the site's deep-green
+          world, and keeps it darkest where the headline and navbar sit */}
+      <div
+        className="pointer-events-none absolute inset-0 transition-opacity duration-700"
+        style={{
+          opacity: photo ? 1 : 0,
+          background:
+            'linear-gradient(180deg, rgba(6,20,13,0.78) 0%, rgba(6,20,13,0.48) 40%, rgba(6,20,13,0.9) 100%),' +
+            'radial-gradient(80% 70% at 50% 40%, rgba(10,61,40,0.35), rgba(6,20,13,0.7) 100%)',
+        }}
+      />
+
       {/* Aurora glow — cheap CSS layer, drifts slowly (GPU-composited) */}
       <div className="pointer-events-none absolute inset-0 animate-float-slow" style={{
         background:
@@ -14,8 +61,11 @@ export default function Hero() {
           'radial-gradient(34% 30% at 60% 14%, rgba(52,211,153,0.10), transparent 60%)',
       }} />
 
-      {/* Living mesh backdrop */}
-      <MeshBackground className="absolute inset-0 h-full w-full" />
+      {/* Living mesh backdrop — held back over a photo so the two layers read as
+          one image instead of competing */}
+      <MeshBackground
+        className={`absolute inset-0 h-full w-full transition-opacity duration-700 ${photo ? 'opacity-50' : 'opacity-100'}`}
+      />
 
       {/* Soft scrim right behind the headline so it stays legible over the cube */}
       <div className="pointer-events-none absolute inset-0" style={{

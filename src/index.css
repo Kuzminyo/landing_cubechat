@@ -9,7 +9,7 @@
 }
 
 :root {
-  /* cubechat brand palette (from lib/core/theme/colors.dart) */
+  /* Cubechat brand palette (from lib/core/theme/colors.dart) */
   --bg-deep: #06140d;
   --bg-top: #0d2818;
   --bg-bottom: #0a3d28;

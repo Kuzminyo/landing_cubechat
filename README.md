@@ -1,6 +1,6 @@
-# cubechat — landing
+# Cubechat — landing
 
-Marketing site for **cubechat**, a separate React + Vite + TypeScript + Tailwind
+Marketing site for **Cubechat**, a separate React + Vite + TypeScript + Tailwind
 app in its own repository so it stays out of the Flutter tree. The app itself
 lives in `Kuzminyo/cubechat`; this repository owns the domain, cubechat.tech.
 
@@ -46,4 +46,4 @@ Wire the real links (currently `#` placeholders):
 
 - `Download.tsx` — `ANDROID_HREF`, `IOS_HREF`, `SOURCE_HREF`
 - `Navbar.tsx` / `Footer.tsx` — the "Source" link points at bitchat (the stated
-  inspiration); swap for cubechat's own repo/releases when public.
+  inspiration); swap for Cubechat's own repo/releases when public.

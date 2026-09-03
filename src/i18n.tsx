@@ -19,7 +19,7 @@ const uk = {
     badge: 'Поза мережею · наскрізне шифрування',
     title: { a: 'Повідомлення, яким\nне потрібен ', em: 'сигнал', b: '.' },
     subtitle:
-      'cubechat передає ваші слова від телефона до телефона через Bluetooth-мережу — зашифровано, анонімно й без сервера. Без вишок, без акаунтів, без слідів.',
+      'Cubechat передає ваші слова від телефона до телефона через Bluetooth-мережу — зашифровано, анонімно й без сервера. Без вишок, без акаунтів, без слідів.',
     ctaPrimary: 'Встановити',
     ctaSecondary: 'Як це працює',
     chips: ['без акаунтів', 'без серверів', 'без інтернету'],
@@ -145,10 +145,10 @@ const uk = {
     // single block at that size reads as a wall rather than as a thought.
     quote: [
       'Вимкнули світло. Темрява. Тисяча людей не мають зв’язку, мережі та, найголовніше, змоги спілкування з рідними, друзями. Саме тоді застосунок, який тримається на чиємусь сервері, стає просто іконкою.',
-      'cubechat влаштований інакше. Кожен телефон поруч — це вузол, та інші смартфони створюють своє унікальне павутиння. Приймають ваші повідомлення, передають їх далі й ніколи не відкривають. Мережа не десь там — вона між вами, у цій кімнаті, на цій вулиці, у місті. Також якщо є слабкий інтернет — це не проблема: обірване з’єднання відновлюється саме, розмова підхоплюється з того місця, де спинилася, а повідомлення для того, хто зараз поза зоною, чекає зашифрованим, доки він не з’явиться. І щоб усе це працювало, від вас не потрібно нічого.',
+      'Cubechat влаштований інакше. Кожен телефон поруч — це вузол, та інші смартфони створюють своє унікальне павутиння. Приймають ваші повідомлення, передають їх далі й ніколи не відкривають. Мережа не десь там — вона між вами, у цій кімнаті, на цій вулиці, у місті. Також якщо є слабкий інтернет — це не проблема: обірване з’єднання відновлюється саме, розмова підхоплюється з того місця, де спинилася, а повідомлення для того, хто зараз поза зоною, чекає зашифрованим, доки він не з’явиться. І щоб усе це працювало, від вас не потрібно нічого.',
       'Ні акаунта, ні номера, ні реєстрації. Немає профілю, який можна заблокувати, немає сервера, який можна вилучити, немає номера, який можна пов’язати з вами. Тільки ключ, що з’явився на вашому телефоні, і люди, які опинилися поруч.',
     ],
-    attribution: 'Проєкт cubechat',
+    attribution: 'Проєкт Cubechat',
   },
   download: {
     kicker: 'Почати',
@@ -212,7 +212,7 @@ const en: Dict = {
     badge: 'Off-grid · end-to-end encrypted',
     title: { a: 'Messages that need\nno ', em: 'signal', b: '.' },
     subtitle:
-      'cubechat carries your words phone-to-phone across a Bluetooth mesh — encrypted, anonymous, and serverless. No towers, no accounts, no trace.',
+      'Cubechat carries your words phone-to-phone across a Bluetooth mesh — encrypted, anonymous, and serverless. No towers, no accounts, no trace.',
     ctaPrimary: 'Get the app',
     ctaSecondary: 'See how it works',
     chips: ['no accounts', 'no servers', 'no internet'],
@@ -336,10 +336,10 @@ const en: Dict = {
   philosophy: {
     quote: [
       'The lights go out. Darkness. A thousand people with no signal, no network and — most of all — no way to talk to family, to friends. That is the moment an app resting on somebody’s server becomes an icon and nothing more.',
-      'cubechat is built differently. Every phone nearby is a node, and the phones around them weave a unique web of their own. They take your messages, carry them onward and never open them. The network isn’t somewhere else — it is between you, in this room, on this street, across the city. And a weak connection is no problem either: a dropped link restores itself, a conversation picks up where it stopped, and a message for someone out of range waits encrypted until they appear. For all of that to work, nothing is asked of you.',
+      'Cubechat is built differently. Every phone nearby is a node, and the phones around them weave a unique web of their own. They take your messages, carry them onward and never open them. The network isn’t somewhere else — it is between you, in this room, on this street, across the city. And a weak connection is no problem either: a dropped link restores itself, a conversation picks up where it stopped, and a message for someone out of range waits encrypted until they appear. For all of that to work, nothing is asked of you.',
       'No account, no number, no sign-up. There is no profile to suspend, no server to seize, no number to tie to you. Only the key that appeared on your phone, and the people who happen to be near.',
     ],
-    attribution: 'The cubechat project',
+    attribution: 'The Cubechat project',
   },
   download: {
     kicker: 'Get started',

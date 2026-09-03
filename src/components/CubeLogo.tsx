@@ -1,7 +1,7 @@
 import { useId } from 'react'
 
 /**
- * The cubechat brand mark — an isometric 3D cube.
+ * The Cubechat brand mark — an isometric 3D cube.
  * A faithful SVG port of `CubeLogoPainter` (lib/core/widgets/cube_logo.dart):
  * three lit faces in the brand lime/green ramp, white edge speculars, and an
  * emerald halo.

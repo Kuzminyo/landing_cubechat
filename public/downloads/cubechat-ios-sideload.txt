@@ -1,7 +1,7 @@
-cubechat — iOS sideload / встановлення на iOS
+Cubechat — iOS sideload / встановлення на iOS
 =============================================
 
-cubechat is not on the App Store (it's an off-grid, no-account app).
+Cubechat is not on the App Store (it's an off-grid, no-account app).
 On iOS it is installed by sideloading an unsigned .ipa with your own Apple ID.
 
 --- EN -------------------------------------------------------------------

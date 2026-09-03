@@ -91,8 +91,8 @@ export default function Navbar() {
         {/* Brand */}
         <a href="#top" className="flex items-center gap-2.5 group shrink-0">
           <CubeLogo size={30} className="transition-transform duration-500 group-hover:rotate-[8deg]" />
-          <span className="text-white text-xl md:text-[22px] font-semibold tracking-tight lowercase">
-            cubechat
+          <span className="text-white text-xl md:text-[22px] font-semibold tracking-tight">
+            Cubechat
           </span>
         </a>
 

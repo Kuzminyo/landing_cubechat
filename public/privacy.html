@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>cubechat — Політика конфіденційності / Privacy Policy</title>
-<meta name="description" content="cubechat privacy policy — no account, no server, nothing collected." />
+<title>Cubechat — Політика конфіденційності / Privacy Policy</title>
+<meta name="description" content="Cubechat privacy policy — no account, end-to-end encryption, and exactly what the push service, call relay and friends map can see." />
 <link rel="icon" href="/cube.svg" type="image/svg+xml" />
 <link rel="canonical" href="https://cubechat.tech/privacy.html" />
 <style>
@@ -24,6 +24,7 @@
   .toggle button[aria-pressed="true"] { background:rgba(46,219,143,.14); color:var(--accent); }
   h1 { font-size:32px; line-height:1.2; letter-spacing:-.02em; margin:40px 0 8px; }
   h2 { font-size:19px; letter-spacing:-.01em; margin:40px 0 10px; }
+  h3 { font-size:16px; letter-spacing:-.01em; margin:28px 0 8px; color:rgba(255,255,255,.85); }
   p, li { color:var(--mut); }
   li { margin:6px 0; }
   ul { padding-left:20px; }
@@ -33,6 +34,10 @@
   .card p:first-child { margin-top:0; } .card p:last-child { margin-bottom:0; }
   strong { color:rgba(255,255,255,.9); font-weight:600; }
   code { font:13px ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(255,255,255,.06); padding:2px 6px; border-radius:4px; color:var(--accent); }
+  .table { overflow-x:auto; margin:16px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--line); color:var(--mut); }
+  th { color:rgba(255,255,255,.85); font-weight:600; }
   footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--line); }
   [data-lang] { display:none; }
   [data-lang].on { display:block; }
@@ -42,7 +47,7 @@
 <div class="wrap">
 
   <header>
-    <div class="brand"><span class="dot"></span>cubechat</div>
+    <div class="brand"><span class="dot"></span>Cubechat</div>
     <div class="toggle" role="group" aria-label="Language">
       <button type="button" data-set="uk" aria-pressed="true">Українська</button>
       <button type="button" data-set="en" aria-pressed="false">English</button>
@@ -52,159 +57,484 @@
   <!-- ============================ УКРАЇНСЬКА ============================ -->
   <section data-lang="uk" class="on">
     <h1>Політика конфіденційності</h1>
-    <p class="meta">Редакція від 30 липня 2026 року</p>
+    <p class="meta">Останнє оновлення: 14 вересня 2026 року</p>
 
-    <p class="lede">cubechat не має ані облікових записів, ані серверів, які зберігали б ваше листування.
-      Ми не збираємо, не зберігаємо і не передаємо ваші персональні дані — тому що технічно не маємо куди.</p>
+    <p class="lede">Cubechat — це месенджер, який працює напряму між пристроями. Повідомлення йдуть від
+      телефона до телефона через Bluetooth Low Energy, а за бажанням — ще й через публічні релеї, які
+      переносять їх запечатаними. Тут немає облікового запису Cubechat, немає сервера повідомлень Cubechat
+      і немає жодної бази даних компанії, де лежали б ваші розмови.</p>
 
-    <h2>1. Хто відповідає за обробку даних</h2>
-    <p>Застосунок cubechat розробляє фізична особа-підприємець (далі — «ми»). Оскільки застосунок не має
-      серверної частини, ми не отримуємо доступу до вмісту вашого листування за жодних обставин.</p>
+    <p>Ця політика описує, що саме застосунок робить з даними, разом із тими частинами, які приватними не є.
+      Месенджер, який перебільшує свою приватність, небезпечніший за той, у якого її немає зовсім.</p>
 
-    <h2>2. Які дані ми збираємо</h2>
-    <div class="card"><p><strong>Жодних.</strong> Ми не збираємо персональні дані. У застосунку немає
-      реєстрації, не потрібні номер телефону, адреса електронної пошти чи будь-який обліковий запис.
-      Ми не використовуємо аналітику, рекламні мережі, трекери й сторонні пакети, що збирають дані.</p></div>
+    <h2>1. Хто відповідає</h2>
+    <p><strong>Володілець даних:</strong> Kuzminyo<br />
+      <strong>Контакт:</strong> <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a></p>
+    <p>Якщо ви перебуваєте в Європейському економічному просторі, Великій Британії або Україні, ви маєте
+      права, описані в розділі 11.</p>
 
-    <h2>3. Що зберігається на вашому пристрої</h2>
-    <p>Уся інформація залишається локально на вашому телефоні:</p>
+    <h2>2. Облікового запису немає</h2>
+    <p>Cubechat ніколи не питає електронну пошту, номер телефона, справжнє ім’я чи пароль. Реєструватися
+      ні для чого.</p>
+    <p>Коли ви вперше відкриваєте застосунок, він створює на вашому пристрої криптографічну пару ключів. Ця
+      пара <strong>і є</strong> вашою особистістю. Її копії немає ні в кого, зокрема й у нас. Ім’я та фото
+      профілю обираєте ви, зберігаються вони на вашому пристрої й надсилаються лише тим, з ким ви справді
+      спілкуєтеся.</p>
+    <div class="card"><p><strong>Наслідок, який варто розуміти:</strong> оскільки в нас немає облікового
+      запису, ми не можемо відновити ані вашу особистість, ані контакти, ані історію, якщо ви загубите
+      пристрій або видалите застосунок. З нашого боку немає з чого відновлювати.</p></div>
+
+    <h2>3. Що залишається на вашому пристрої</h2>
+    <p>Усе перелічене зберігається лише на вашому телефоні, у базах даних, зашифрованих AES, ключ від яких
+      лежить в Android Keystore або iOS Keychain:</p>
     <ul>
-      <li><strong>Криптографічні ключі.</strong> Створюються безпосередньо на пристрої під час першого
-        запуску і зберігаються у захищеному сховищі системи (Keychain на iOS, Keystore на Android).
-        Приватний ключ ніколи не залишає пристрій.</li>
-      <li><strong>Листування, фото та голосові повідомлення.</strong> Зберігаються у зашифрованому
-        локальному сховищі застосунку.</li>
-      <li><strong>Ваше ім’я користувача та налаштування.</strong> Ім’я ви обираєте самі, воно може бути
-        будь-яким і не перевіряється.</li>
-      <li><strong>Список контактів застосунку.</strong> Формується лише з тих контактів, які ви додали
-        вручну. Ми не читаємо телефонну книгу вашого пристрою.</li>
+      <li>ваші ключі та відкриті ключі ваших співрозмовників;</li>
+      <li>історія листування, разом із фото, голосовими повідомленнями та файлами;</li>
+      <li>ім’я, фото профілю та налаштування застосунку;</li>
+      <li>закріплені, архівовані, приховані розмови та папки;</li>
+      <li>діагностичний журнал усередині застосунку (останні 1000 рядків).</li>
+    </ul>
+    <p>Нічого з цього нікуди не вивантажується. Усе зникає, коли ви видаляєте застосунок, користуєтеся
+      <strong>екстреним стиранням</strong> або коли спрацьовує налаштований вами <strong>вимикач на випадок
+      мовчання</strong>.</p>
+    <p>Діагностичний журнал залишається на пристрої, доки ви свідомо не експортуєте його й не надішлете
+      комусь. У ньому є фрагменти відкритих ключів, час, стани транспорту та повідомлення про помилки. У ньому
+      <strong>немає</strong> тексту повідомлень, фотографій чи вашого місцезнаходження.</p>
+
+    <h2>4. Що подорожує між телефонами</h2>
+    <h3>4.1 Через Bluetooth (типовий шлях)</h3>
+    <p>Повідомлення між пристроями поруч зашифровані наскрізно за протоколом Noise (схеми XX та IK) з X25519,
+      ChaCha20-Poly1305 і BLAKE2s та підписані Ed25519. Вони йдуть напряму з одного пристрою на інший або
+      стрибають через інші пристрої Cubechat, які прочитати їх не можуть.</p>
+    <p>Ідентифікатор Bluetooth, який застосунок повідомляє в ефір, <strong>періодично змінюється</strong>, тож
+      пасивний спостерігач не може стежити за одним пристроєм цілий день лише за адресою.</p>
+    <p>Будь-хто в радіусі Bluetooth може побачити, що поруч є пристрій із Cubechat і що відбувається
+      зашифрований обмін. Прочитати його він не може.</p>
+
+    <h3>4.2 Через релеї Nostr (типово увімкнено, можна вимкнути)</h3>
+    <p>Коли <strong>інтернет-резерв</strong> увімкнено, повідомлення, яке не вдалося доставити мережею
+      пристроїв, публікується на публічних релеях Nostr, і вони передають його одержувачу. Релей отримує
+      повідомлення вже запечатаним і підписаним — розшифрувати його він не може.</p>
+    <div class="card"><p><strong>Але релей дізнається метадані, і це найважливіше застереження в цій
+      політиці:</strong> він бачить, які два відкриті ключі Nostr обмінялися кадром, коли саме та якого
+      розміру той кадр був. Мережа Bluetooth цього не розкриває.</p></div>
+    <p>Саме тому до вересня 2026 року ця можливість була типово вимкнена. Тепер вона <strong>типово
+      увімкнена</strong>: з вимкненою людина поза радіусом Bluetooth просто не отримає повідомлення, доки ви
+      не опинитеся поруч. Вимкнути можна будь-коли — Профіль → Інтернет-резерв, — і <strong>екстрене
+      стирання</strong> теж її вимикає.</p>
+    <p>Релеї працюють під керуванням сторонніх осіб, не наших. Типовий список можна змінити в застосунку.</p>
+
+    <h3>4.3 Групові кімнати</h3>
+    <p>Ключ кімнати виводиться з її назви та пароля. Будь-хто, хто знає і те, і те, може читати кімнату.
+      Кімнати не мають випереджувальної секретності, а пароль кімнати вартий рівно тієї обережності, з якою
+      ви його передали.</p>
+
+    <h2>5. Служба сповіщень</h2>
+    <p>Щоб розбудити телефон із повністю закритим застосунком, Cubechat тримає одну невелику службу за адресою
+      <code>push.cubechat.tech</code>. Це єдиний сервер, яким ми керуємо; та сама машина також ретранслює
+      голосові дзвінки, описані в розділі 5.1.</p>
+    <p><strong>Вона типово увімкнена, і її можна вимкнути.</strong> Вмісту повідомлень вона не бачить
+      ніколи.</p>
+    <p>Операційна система вашого телефона питає окремо, перш ніж показати бодай одне сповіщення, і якщо ви
+      там відмовите — не реєструється нічого. Вимкнення перемикача в застосунку видаляє ваш запис зі служби.
+      До вересня 2026 року ця можливість була вимкнена, доки її не увімкнуть; тепер вона починає увімкненою,
+      бо месенджер, чиї сповіщення працюють лише поки він і так відкритий, своєї роботи не виконує.</p>
+    <p>Для кожного зареєстрованого телефона вона зберігає:</p>
+    <div class="table"><table>
+      <tr><th>Що</th><th>Навіщо</th></tr>
+      <tr><td>Ваш відкритий ключ Nostr (<code>npub</code>)</td><td>Адреса, за якою чекати на пошту</td></tr>
+      <tr><td>Токен пристрою APNs або FCM</td><td>Адреса телефона, якому дзвонити</td></tr>
+      <tr><td>Код мови (<code>en</code> або <code>uk</code>)</td><td>Щоб напис був мовою, яку ви читаєте</td></tr>
+      <tr><td>Платформа (<code>ios</code> / <code>android</code>)</td><td>Щоб обрати між Apple і Google</td></tr>
+      <tr><td>Який вузол Apple відповів</td><td>Щоб не витрачати зайвий запит щоразу</td></tr>
+      <tr><td>Час реєстрації</td><td>Щоб застарілий запис можна було замінити</td></tr>
+    </table></div>
+    <p>Служба стежить за релеями, чи немає подій на вашу адресу, і просить Apple або Google подзвонити вашому
+      телефону. <strong>Текст напису — незмінний рядок</strong>: «New message» або «Нове повідомлення», бо
+      служба нічого не може розшифрувати й сказати їй більше нічого. Саме повідомлення забирає й відкриває ваш
+      телефон.</p>
+    <p>Реєстрації підписані криптографічно, тож ніхто не може зареєструвати токен на чужий ключ. Вимкнення
+      цієї можливості в застосунку видаляє ваш запис зі служби. Якщо ви видалите застосунок, запис
+      залишиться, доки Apple або Google не відмовлять у доставці, після чого його буде видалено
+      автоматично.</p>
+    <p><strong>Apple і Google теж причетні.</strong> Служба сповіщень Apple (iOS) та Firebase Cloud Messaging
+      (Android) отримують токен пристрою й сам факт надсилання сповіщення. Вмісту повідомлення вони не
+      отримують. До цієї обробки застосовуються їхні власні політики конфіденційності.</p>
+    <p>Журнали сервера зберігаються для експлуатаційних потреб і містять скорочені фрагменти відкритих ключів
+      та результати доставки, а не вміст.</p>
+
+    <h3>5.1 Голосові дзвінки</h3>
+    <p>Дзвінок встановлюється зашифрованими повідомленнями, як і будь-яке інше повідомлення, а його звук іде
+      через ретранслятор дзвінків (TURN) на тому самому сервері. Звук зашифрований між двома телефонами
+      (DTLS-SRTP): ретранслятор його пересилає, але почути не може.</p>
+    <p><strong>Мережеві метадані ретранслятор бачить:</strong> IP-адреси обох телефонів, коли відбувся
+      дзвінок, скільки тривав і скільки даних передав. Щоб скористатися ним, ваш телефон просить у служби
+      короткочасний доступ запитом, підписаним вашим ключем. Ми не записуємо дзвінки. Журнали ретранслятора,
+      які зберігаються для роботи й захисту служби, можуть містити ці IP-адреси та час сеансів; звуку в них
+      немає ніколи.</p>
+    <p>Типово обидва телефони бачать лише адресу ретранслятора, а не одне одного. Якщо ви увімкнете в профілі
+      <strong>прямі дзвінки</strong>, дзвінок може з’єднатися напряму між телефонами, і тоді телефон
+      співрозмовника може побачити вашу IP-адресу.</p>
+
+    <h2>6. Місцезнаходження</h2>
+    <p>Cubechat використовує ваше місцезнаходження для двох речей і лише тоді, коли ви самі про це просите:
+      щоб надіслати локацію в чат і щоб показувати себе друзям на карті. <strong>Нічим не діляться, доки ви
+      цього не оберете.</strong> Під час першого знайомства застосунок про місцезнаходження не питає.</p>
+    <p><strong>Показ себе на карті.</strong> Він вимкнений, доки ви його не ввімкнете. Перш ніж увімкнути,
+      застосунок питає, чи дозволяєте ви показувати своє місцезнаходження на карті, і ви можете відмовитися.
+      Якщо ви вимкнете показ, а потім увімкнете знову, він спитає ще раз.</p>
+    <ul>
+      <li>Ваше місцезнаходження бачать <strong>лише контакти з вашої карти</strong>: ті, кого ви запросили,
+        або чиє запрошення ви прийняли. Його ніколи не показують незнайомцям, людям поруч чи публічно.</li>
+      <li>Воно надсилається <strong>зашифрованим наскрізно</strong>, так само як повідомлення. Ми його ніколи
+        не отримуємо, і релеї, які його переносять, теж.</li>
+      <li>Поки показ увімкнено, ваша позначка <strong>оновлюється</strong>, зокрема коли Cubechat у фоні, щоб
+        друзі бачили, де ви є, а не де ви востаннє відкривали застосунок. Кожне оновлення зникає з їхньої
+        карти за шість хвилин, якщо не прийде новіше.</li>
+      <li><strong>«Сховатися»</strong> на вкладці «Карта» або перемикач у профілі вимикає показ одним дотиком
+        і одразу прибирає вашу позначку з карт усіх друзів.</li>
+    </ul>
+    <p><strong>Фонове місцезнаходження («Завжди»).</strong> Запитується лише після того, як ви погодилися
+      показувати себе на карті, і використовується лише для оновлення цієї позначки. Надавати його не
+      обов’язково: без нього позначка оновлюється лише поки Cubechat відкритий.</p>
+    <p><strong>Блокування.</strong> Будь-який контакт можна заблокувати з його профілю. Заблокований контакт
+      не отримує від вас місцезнаходження, позначку, яку ви вже йому показали, одразу буде відкликано, а його
+      місцезнаходження не малюється на вашій карті.</p>
+    <p><strong>Надсилання локації в чат</strong> один раз зчитує вашу позицію й надсилає її, як повідомлення,
+      у чат, який ви обрали, на час, який ви обрали.</p>
+    <p><strong>Що бачать сторонні служби:</strong></p>
+    <ul>
+      <li><strong>Плитки карти</strong> завантажуються з OpenStreetMap, CARTO, Esri ArcGIS, OpenTopoMap або
+        Google Maps — залежно від обраного шару. Ті сервери бачать вашу IP-адресу й те, які квадрати карти ви
+        запитали, а це показує приблизно, куди ви дивитеся, хоч і не обов’язково, де ви є.</li>
+      <li><strong>Зворотне геокодування</strong> (перетворення координат на назву вулиці) виконує геокодер
+        самої операційної системи — Apple або Google, — який отримує ті координати.</li>
+    </ul>
+    <p>Ані першого, ані другого не уникнути, поки карта на екрані, і ані до першого, ані до другого не
+      доходить, якщо ви не відкриваєте вкладку «Карта».</p>
+
+    <h2>7. Камера, мікрофон, фотографії та файли</h2>
+    <p>Ці дозволи використовуються лише для того, що ви робите свідомо: сфотографувати, щоб надіслати,
+      записати голосове повідомлення, прикріпити зображення чи документ. Нічого не записується у фоні й нічого
+      нікуди не вивантажується, окрім тієї розмови, у яку ви це надсилаєте, — зашифрованим.</p>
+    <p>Отримані файли зберігаються всередині приватного сховища застосунку.</p>
+
+    <h2>8. Чого Cubechat не робить</h2>
+    <ul>
+      <li><strong>Жодної аналітики.</strong> Ні Firebase Analytics, ні Crashlytics, ні Sentry, ні Amplitude,
+        ні Mixpanel — нічого з цього, і жодного власного відповідника.</li>
+      <li><strong>Жодної реклами та рекламних ідентифікаторів.</strong> Застосунок не читає ані IDFA, ані
+        рекламний ідентифікатор Android.</li>
+      <li><strong>Жодного стеження в тому сенсі, який вкладає Apple у App Tracking Transparency.</strong> Ніщо
+        не пов’язується з вами чи вашим пристроєм заради реклами й нічим не діляться з брокерами даних.</li>
+      <li><strong>Жодного продажу чи передавання персональних даних.</strong> Продавати нічого.</li>
+      <li><strong>Жодного сканування вмісту.</strong> Ми не можемо прочитати ваші повідомлення — це
+        унеможливлено будовою, а не просто заборонено.</li>
     </ul>
 
-    <h2>4. Як передаються повідомлення</h2>
-    <p><strong>Bluetooth-мережа.</strong> Основний спосіб — пряма передача між пристроями поблизу.
-      Повідомлення може ретранслюватися через проміжні телефони інших користувачів, щоб дійти далі.
-      Такі проміжні пристрої передають лише зашифрований блок даних і не можуть прочитати ані вміст
-      повідомлення, ані дізнатися, кому воно призначене.</p>
-    <p><strong>Резервний канал через інтернет.</strong> Коли адресат поза зоною дії Bluetooth, застосунок
-      може надіслати повідомлення через публічні релеї мережі Nostr. За замовчуванням це
-      <code>relay.damus.io</code>, <code>nos.lol</code> і <code>relay.primal.net</code> — їх утримують
-      треті сторони, а не ми.</p>
-    <div class="card"><p>Оператори цих релеїв бачать <strong>зашифрований</strong> вміст, який не можуть
-      прочитати, але також бачать час і розмір повідомлення, тимчасовий відкритий ключ та вашу
-      IP-адресу. Якщо це для вас неприйнятно, резервний канал можна вимкнути в налаштуваннях або
-      замінити перелік релеїв на власні.</p></div>
+    <h2>9. Резервні копії та перенесення</h2>
+    <p>Cubechat уміє створювати <strong>зашифровану резервну копію</strong> листування та зашифровано
+      <strong>переносити його з телефона на телефон</strong>. І те, і те захищене парольною фразою, яку
+      обираєте ви, і те, і те лишається під вашим контролем — файл потрапляє туди, куди ви його покладете.</p>
+    <p>Якщо ви втратите парольну фразу, копію відновити неможливо. Ключа в нас немає.</p>
 
-    <h2>5. Захист від стеження</h2>
-    <p>Ідентифікатор, який ваш пристрій передає в радіоефірі, автоматично змінюється щогодини. Це не
-      дозволяє стороннім спостерігачам відстежувати ваші переміщення за сигналом Bluetooth, тоді як ваші
-      збережені контакти впізнають вас коректно.</p>
-
-    <h2>6. Дозволи, які запитує застосунок</h2>
+    <h2>10. Як видалити свої дані</h2>
     <ul>
-      <li><strong>Bluetooth</strong> — пошук пристроїв поблизу та обмін повідомленнями. Це основна функція застосунку.</li>
-      <li><strong>Мікрофон</strong> — лише коли ви записуєте голосове повідомлення.</li>
-      <li><strong>Камера</strong> — лише коли ви робите фото для надсилання.</li>
-      <li><strong>Фотографії</strong> — щоб вибрати зображення для надсилання та зберегти отримані.</li>
-      <li><strong>Сповіщення</strong> — щоб повідомити про нове повідомлення.</li>
-      <li><strong>Геолокація (лише Android 11 і старіші)</strong> — цього вимагає операційна система для
-        пошуку пристроїв через Bluetooth. Застосунок <strong>не визначає та не зберігає ваше
-        місцезнаходження</strong> і ніколи його нікуди не передає.</li>
+      <li><strong>Видалити застосунок.</strong> Разом із ним зникає все на пристрої, зокрема ключі. Це
+        незворотно: після повторного встановлення виникає <em>нова</em> особистість, і наявні розмови
+        продовжити не вийде.</li>
+      <li><strong>Екстрене стирання</strong> робить те саме зсередини застосунку й вимикає інтернет-резерв
+        назад.</li>
+      <li><strong>Вимикач на випадок мовчання</strong>, якщо ви його налаштували, стирає пристрій після
+        заданого вами часу без активності.</li>
+      <li><strong>Реєстрацію в службі сповіщень</strong> буде видалено з нашого сервера, щойно ви вимкнете
+        сповіщення.</li>
+      <li><strong>Релеї Nostr</strong> — це сторонні особи з власними строками зберігання. Кадр, який уже
+        опубліковано, ми відкликати з них не можемо. Це шифротекст, і релеї зазвичай видаляють події за
+        власним розкладом.</li>
     </ul>
 
-    <h2>7. Передавання даних третім сторонам</h2>
-    <p>Ми нікому не передаємо і не продаємо дані. Єдині треті сторони, задіяні в роботі застосунку, —
-      оператори публічних релеїв, описані в розділі 4, і лише в разі використання резервного каналу.</p>
+    <h2>11. Ваші права</h2>
+    <p>Якщо до вас застосовуються GDPR, GDPR Великої Британії або Закон України «Про захист персональних
+      даних», ви маєте право на доступ, виправлення, стирання, обмеження обробки та перенесення своїх
+      персональних даних, а також право заперечувати проти обробки.</p>
+    <p>На практиці ці права здебільшого задовольняються самою будовою застосунку: єдині персональні дані, які
+      ми тримаємо, — це реєстрація у службі сповіщень, описана в розділі 5, і ви можете стерти її самостійно
+      будь-якої миті, вимкнувши сповіщення. Ретранслятор дзвінків із розділу 5.1 зберігає метадані з’єднань
+      лише для роботи й захисту служби. З усього іншого або зі скаргою звертайтеся на адресу з розділу 1. Ви
+      також маєте право поскаржитися до наглядового органу своєї країни.</p>
+    <p><strong>Правова підстава</strong>, де вона потрібна: згода — для служби сповіщень і для показу
+      місцезнаходження. І те, і те скасовується будь-якої миті зсередини застосунку, і за обома стоїть запит
+      дозволу операційної системи, на який відповідаєте ви самі: відмова там означає, що не збирається нічого,
+      хай там що показує перемикач у застосунку. Законний інтерес покриває підтримання служби сповіщень у
+      безпечному й робочому стані.</p>
 
-    <h2>8. Зберігання та видалення</h2>
-    <p>Ми не зберігаємо ваших даних, тому не маємо чого видаляти на нашому боці. Усе, що є, лежить на
-      вашому пристрої. <strong>Видалення застосунку остаточно знищує всі повідомлення та ключі</strong> —
-      відновити їх неможливо ані вам, ані нам.</p>
+    <h2>12. Діти</h2>
+    <p>Cubechat призначений для дорослих і має вікову категорію <strong>18+</strong>. Він не призначений для
+      дітей. Якщо ви вважаєте, що дитина надала нам персональні дані — а це, з огляду на розділ 2, могла б
+      бути лише реєстрація у службі сповіщень, — напишіть нам, і їх буде видалено.</p>
 
-    <h2>9. Діти</h2>
-    <p>Застосунок не призначений для дітей віком до 13 років і не збирає їхніх даних.</p>
+    <h2>13. Безпека, сказана чесно</h2>
+    <p>Cubechat побудований так, щоб бути приватним, а його криптографія перевірена на опублікованих тестових
+      векторах. Незалежного аудиту він не проходив, і це варто зважити.</p>
+    <p>Відомі обмеження, названі прямо, бо ви маєте право їх знати:</p>
+    <ul>
+      <li><strong>Групові кімнати не мають випереджувальної секретності</strong>, а їхній ключ виводиться з
+        назви та пароля.</li>
+      <li><strong>Отримані файли зберігаються розшифрованими</strong> у приватному сховищі застосунку,
+        захищені пісочницею операційної системи, а не другим шаром шифрування.</li>
+      <li><strong>Метадані релеїв справжні</strong>, як описано в розділі 4.2.</li>
+      <li><strong>Розблокований телефон у чужих руках</strong> дозволяє прочитати Cubechat — так само, як і
+        будь-який інший месенджер.</li>
+    </ul>
 
-    <h2>10. Зміни до політики</h2>
-    <p>Якщо політика зміниться, ми оновимо цю сторінку та дату редакції вгорі.</p>
+    <h2>14. Зміни</h2>
+    <p>Якщо ця політика суттєво зміниться, застосунок про це скаже, а дата вгорі зміниться. Чинна версія
+      завжди опублікована за адресою <a href="https://cubechat.tech/privacy">cubechat.tech/privacy</a>.</p>
 
-    <h2>11. Контакти</h2>
-    <p>Питання щодо конфіденційності: <a href="mailto:ЗАПОВНІТЬ@ПОШТА">ЗАПОВНІТЬ@ПОШТА</a></p>
+    <h2>15. Контакт</h2>
+    <p>Пишіть на <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a> з будь-яким питанням щодо цієї
+      політики, щоб скористатися правом із розділу 11 або щоб повідомити про проблему з безпекою.</p>
   </section>
 
   <!-- ============================== ENGLISH ============================== -->
   <section data-lang="en">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated 30 July 2026</p>
+    <p class="meta">Last updated: 14 September 2026</p>
 
-    <p class="lede">cubechat has no accounts and no servers that could hold your conversations. We do not
-      collect, store or share your personal data — because there is nowhere for it to go.</p>
+    <p class="lede">Cubechat is a peer-to-peer messenger. Messages travel directly between phones over
+      Bluetooth Low Energy, and optionally through public relays that carry them sealed. There is no Cubechat
+      account, no Cubechat message server, and no company database holding your conversations.</p>
+
+    <p>This policy describes exactly what the app does with data, including the parts that are not private,
+      because a messenger that overstates its privacy is more dangerous than one that has none.</p>
 
     <h2>1. Who is responsible</h2>
-    <p>cubechat is developed by an individual entrepreneur (“we”). Because the app has no backend, we
-      cannot access the contents of your conversations under any circumstances.</p>
+    <p><strong>Controller:</strong> Kuzminyo<br />
+      <strong>Contact:</strong> <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a></p>
+    <p>If you are in the European Economic Area, the United Kingdom or Ukraine, you have the rights described
+      in section 11.</p>
 
-    <h2>2. What we collect</h2>
-    <div class="card"><p><strong>Nothing.</strong> We collect no personal data. There is no sign-up, and
-      no phone number, email address or account of any kind is required. We use no analytics, no ad
-      networks, no trackers and no third-party data-collecting SDKs.</p></div>
+    <h2>2. There is no account</h2>
+    <p>Cubechat never asks for an email address, a phone number, a real name or a password, and there is
+      nothing to sign up for.</p>
+    <p>When you first open the app it generates a cryptographic key pair on your device. That key pair
+      <strong>is</strong> your identity. Nobody, including us, holds a copy. Your display name and profile
+      photo are chosen by you, stored on your device, and sent only to people you actually communicate
+      with.</p>
+    <div class="card"><p><strong>A consequence you should understand:</strong> because we hold no account, we
+      cannot restore your identity, your contacts or your history if you lose the device or delete the app.
+      There is nothing on our side to restore from.</p></div>
 
-    <h2>3. What is stored on your device</h2>
+    <h2>3. What stays on your device</h2>
+    <p>All of the following is stored only on your phone, in AES-encrypted databases whose key is held in the
+      Android Keystore or the iOS Keychain:</p>
     <ul>
-      <li><strong>Cryptographic keys.</strong> Generated on the device at first launch and held in the
-        system’s secure storage (Keychain on iOS, Keystore on Android). The private key never leaves the device.</li>
-      <li><strong>Messages, photos and voice notes.</strong> Kept in the app’s encrypted local store.</li>
-      <li><strong>Your display name and settings.</strong> You choose the name; it can be anything and is never verified.</li>
-      <li><strong>Your in-app contacts.</strong> Only the ones you add yourself. We do not read your phone’s address book.</li>
+      <li>your identity keys and your contacts’ public keys;</li>
+      <li>your message history, including photos, voice messages and files;</li>
+      <li>your display name, profile photo and app settings;</li>
+      <li>pinned, archived, hidden and foldered conversations;</li>
+      <li>the in-app diagnostic log (the most recent 1000 lines).</li>
+    </ul>
+    <p>None of it is uploaded anywhere. It is removed when you uninstall the app, use <strong>Emergency
+      Wipe</strong>, or when the <strong>dead man’s switch</strong> you configured fires.</p>
+    <p>The diagnostic log stays on the device unless you deliberately export it and send it to somebody. It
+      contains public key fragments, timings, transport states and error messages. It does
+      <strong>not</strong> contain message text, photos or your location.</p>
+
+    <h2>4. What travels between phones</h2>
+    <h3>4.1 Over Bluetooth (the default)</h3>
+    <p>Messages between nearby phones are encrypted end-to-end using the Noise Protocol (XX and IK patterns)
+      with X25519, ChaCha20-Poly1305 and BLAKE2s, and signed with Ed25519. They pass directly from one device
+      to another, or hop through other Cubechat devices that cannot read them.</p>
+    <p>The Bluetooth identifier the app advertises <strong>rotates periodically</strong>, so a passive observer
+      cannot follow one device across the day by its address alone.</p>
+    <p>Anyone within Bluetooth range can observe that a Cubechat device is present and that encrypted traffic
+      is occurring. They cannot read it.</p>
+
+    <h3>4.2 Over Nostr relays (on by default, and you can switch it off)</h3>
+    <p>When <strong>Internet fallback</strong> is on, a message the mesh could not deliver is published to
+      public Nostr relays, which forward it to the recipient. The relay receives the message already sealed
+      and signed; it cannot decrypt it.</p>
+    <div class="card"><p><strong>A relay does learn metadata, and this is the most important disclosure in
+      this policy:</strong> it can see which two Nostr public keys exchanged a frame, when, and how large it
+      was. The Bluetooth mesh does not leak this.</p></div>
+    <p>This feature was off by default until September 2026 for exactly that reason. It is now <strong>on by
+      default</strong>, because with it off a message to somebody out of Bluetooth range simply does not arrive
+      until you are near each other again. You can turn it off at any time in Profile → Internet fallback, and
+      <strong>Emergency Wipe</strong> switches it off too.</p>
+    <p>The relays are operated by unrelated third parties, not by us. The default list is editable in the
+      app.</p>
+
+    <h3>4.3 Group rooms</h3>
+    <p>A room’s key is derived from its name and password. Anyone who knows both can read the room. Rooms are
+      not forward-secret, and a room password is only as good as the care taken in sharing it.</p>
+
+    <h2>5. The push notification service</h2>
+    <p>To wake a phone whose app is fully closed, Cubechat runs one small service at
+      <code>push.cubechat.tech</code>. This is the only server we operate; the same machine also relays voice
+      calls, described in section 5.1.</p>
+    <p><strong>It is on by default, and you can switch it off.</strong> It never sees message content.</p>
+    <p>Your phone’s operating system asks separately before any notification can be shown, and if you decline
+      there, nothing is registered at all. Turning the switch off in the app deletes your entry from the
+      service. Before September 2026 this feature was off until switched on; it now starts on, because a
+      messenger whose notifications only work while it is already open is not doing the job.</p>
+    <p>For each phone that registers, it stores:</p>
+    <div class="table"><table>
+      <tr><th>What</th><th>Why</th></tr>
+      <tr><td>Your Nostr public key (<code>npub</code>)</td><td>The address to watch for incoming mail</td></tr>
+      <tr><td>The APNs or FCM device token</td><td>The address of the phone to ring</td></tr>
+      <tr><td>Language code (<code>en</code> or <code>uk</code>)</td><td>So the banner is in a language you read</td></tr>
+      <tr><td>Platform (<code>ios</code> / <code>android</code>)</td><td>To choose between Apple and Google</td></tr>
+      <tr><td>Which Apple host answered</td><td>To avoid a wasted round trip on every push</td></tr>
+      <tr><td>Timestamp of the registration</td><td>So a stale entry can be replaced</td></tr>
+    </table></div>
+    <p>The service watches the relays for events addressed to your public key and asks Apple or Google to ring
+      your phone. <strong>The banner text is a fixed string</strong> — “New message” or “Нове повідомлення” —
+      because the service cannot decrypt anything and has nothing else to say. The message itself is fetched
+      and opened by your phone.</p>
+    <p>Registrations are cryptographically signed, so nobody can register a token against somebody else’s
+      key. Turning the feature off in the app deletes your entry from the service. Uninstalling the app leaves
+      the entry until the token is refused by Apple or Google, at which point it is deleted automatically.</p>
+    <p><strong>Apple and Google are involved.</strong> Apple Push Notification service (iOS) and Firebase Cloud
+      Messaging (Android) receive the device token and the fact that a notification was sent. They do not
+      receive message content. Their own privacy policies apply to that processing.</p>
+    <p>Server logs are kept for operational purposes and contain shortened public key fragments and delivery
+      outcomes, not content.</p>
+
+    <h3>5.1 Voice calls</h3>
+    <p>A voice call is set up with encrypted messages, like any other message, and its audio is carried
+      through a call relay (TURN) on the same server. The audio is encrypted between the two phones
+      (DTLS-SRTP); the relay forwards it and cannot listen to it.</p>
+    <p><strong>The relay does see network metadata:</strong> the IP addresses of both phones, when a call took
+      place, how long it lasted and how much data it carried. To use it, your phone asks the service for
+      short-lived access with a request signed by your key. We do not record calls. The relay’s server logs,
+      kept for operating and securing the service, can contain those IP addresses and session times; they
+      never contain audio.</p>
+    <p>By default both phones only ever see the relay’s address, not each other’s. If you turn on
+      <strong>direct calls</strong> in your profile, a call may connect phone to phone instead, and then the
+      other person’s phone can see your IP address.</p>
+
+    <h2>6. Location</h2>
+    <p>Cubechat uses your location for two things, and only when you ask for them: sending a location into a
+      chat, and showing yourself on the map to friends. <strong>Nothing is shared until you choose to.</strong>
+      The app does not ask for location during the first-run introduction.</p>
+    <p><strong>Showing yourself on the map.</strong> This is off until you turn it on. Before it turns on, the
+      app asks whether you allow your location to be shown on the map, and you can decline. It asks again if
+      you turn it off and later back on.</p>
+    <ul>
+      <li>Your location is shown <strong>only to the contacts on your map</strong>: people you invited, or
+        whose invitation you accepted. It is never shown to strangers, to people nearby, or publicly.</li>
+      <li>It is sent <strong>end-to-end encrypted</strong>, the same way as a message. We never receive it, and
+        neither do the relays that carry it.</li>
+      <li>While it is on, your pin <strong>keeps updating</strong>, including while Cubechat is in the
+        background, so friends see where you are rather than where you last opened the app. Each update
+        expires on their map after six minutes if no newer one arrives.</li>
+      <li><strong>Hide</strong> on the Map tab, or the switch in Profile, turns it off in one tap and withdraws
+        your pin from every friend’s map at once.</li>
+    </ul>
+    <p><strong>Background location (“Always”).</strong> Only requested once you have agreed to be shown on the
+      map, and only used to keep that pin current. Granting it is optional: without it, your pin updates only
+      while Cubechat is open.</p>
+    <p><strong>Blocking.</strong> You can block any contact from their profile. A blocked contact receives no
+      location from you, a pin you had already shown them is withdrawn at once, and their location is not
+      drawn on your map.</p>
+    <p><strong>Sending a location in a chat</strong> reads your position once and sends it, like a message, to
+      the chat you chose, for the time you choose.</p>
+    <p><strong>Third parties who see something:</strong></p>
+    <ul>
+      <li><strong>Map tiles</strong> are fetched from OpenStreetMap, CARTO, Esri ArcGIS, OpenTopoMap or Google
+        Maps, depending on the layer you pick. Those servers see your IP address and which map squares you
+        asked for — which reveals roughly where you are looking, though not necessarily where you are.</li>
+      <li><strong>Reverse geocoding</strong> (turning coordinates into a street name) is performed by the
+        operating system’s own geocoder — Apple’s or Google’s — which receives the coordinates being
+        named.</li>
+    </ul>
+    <p>Neither of these is avoidable while a map is on screen, and neither is reached unless you open the Map
+      tab.</p>
+
+    <h2>7. Camera, microphone, photos and files</h2>
+    <p>These permissions are used only for what you explicitly do: take a photo to send, record a voice
+      message, attach a picture or a document. Nothing is captured in the background, and nothing is uploaded
+      anywhere except to the conversation you send it to, encrypted.</p>
+    <p>Media you receive is stored inside the app’s private container.</p>
+
+    <h2>8. What Cubechat does not do</h2>
+    <ul>
+      <li><strong>No analytics.</strong> No Firebase Analytics, no Crashlytics, no Sentry, no Amplitude, no
+        Mixpanel — none of it, and no home-grown equivalent.</li>
+      <li><strong>No advertising and no ad identifiers.</strong> The app does not read the IDFA or the Android
+        advertising ID.</li>
+      <li><strong>No tracking as Apple’s App Tracking Transparency defines it.</strong> Nothing is linked to you
+        or your device for advertising, and nothing is shared with a data broker.</li>
+      <li><strong>No selling or sharing of personal data.</strong> There is nothing to sell.</li>
+      <li><strong>No content scanning.</strong> We cannot read your messages; the design makes it impossible
+        rather than merely forbidden.</li>
     </ul>
 
-    <h2>4. How messages travel</h2>
-    <p><strong>Bluetooth mesh.</strong> The primary path is directly between nearby devices. A message may
-      be relayed through other people’s phones to reach further. Those relaying devices carry only an
-      encrypted blob — they cannot read the message or tell who it is addressed to.</p>
-    <p><strong>Internet fallback.</strong> When the recipient is out of Bluetooth range, the app may send
-      the message via public Nostr relays — by default <code>relay.damus.io</code>, <code>nos.lol</code>
-      and <code>relay.primal.net</code>, which are operated by third parties, not by us.</p>
-    <div class="card"><p>Those relay operators see <strong>encrypted</strong> content they cannot read,
-      but they do see the timing and size of a message, an ephemeral public key, and your IP address. If
-      that is not acceptable to you, the fallback can be turned off in settings, or the relay list
-      replaced with your own.</p></div>
+    <h2>9. Backups and transfers</h2>
+    <p>Cubechat can produce an <strong>encrypted backup</strong> of your conversations and an encrypted
+      <strong>phone-to-phone transfer</strong>. Both are protected by a passphrase you choose, and both stay
+      under your control — the file goes wherever you put it.</p>
+    <p>If you lose the passphrase, the backup cannot be recovered. We do not hold a key.</p>
 
-    <h2>5. Protection against tracking</h2>
-    <p>The identifier your device broadcasts over the air rotates automatically every hour. Passive
-      observers cannot use the Bluetooth signal to follow your movements, while your saved contacts still
-      recognise you correctly.</p>
-
-    <h2>6. Permissions the app requests</h2>
+    <h2>10. Deleting your data</h2>
     <ul>
-      <li><strong>Bluetooth</strong> — to find nearby devices and exchange messages. This is the core function of the app.</li>
-      <li><strong>Microphone</strong> — only while you record a voice message.</li>
-      <li><strong>Camera</strong> — only while you take a photo to send.</li>
-      <li><strong>Photos</strong> — to pick images to send and to save ones you receive.</li>
-      <li><strong>Notifications</strong> — to alert you to a new message.</li>
-      <li><strong>Location (Android 11 and older only)</strong> — required by the operating system in order
-        to scan for Bluetooth devices. The app <strong>does not determine or store your location</strong>
-        and never transmits it anywhere.</li>
+      <li><strong>Uninstall the app.</strong> Everything on the device goes with it, including the keys. This
+        is irreversible: reinstalling produces a <em>new</em> identity, and existing conversations cannot be
+        resumed.</li>
+      <li><strong>Emergency Wipe</strong> does the same from inside the app, and switches the internet fallback
+        back off.</li>
+      <li><strong>The dead man’s switch</strong>, if you configured one, wipes the device after the period of
+        inactivity you set.</li>
+      <li><strong>Push registration</strong> is deleted from our service when you switch push off.</li>
+      <li><strong>Nostr relays</strong> are third parties with their own retention. A frame already published
+        cannot be recalled from them by us. It is ciphertext, and relays typically expire events after a period
+        of their choosing.</li>
     </ul>
 
-    <h2>7. Sharing with third parties</h2>
-    <p>We share and sell nothing. The only third parties involved are the public relay operators described
-      in section 4, and only when the internet fallback is used.</p>
+    <h2>11. Your rights</h2>
+    <p>If the GDPR, the UK GDPR or Ukraine’s law on personal data protection applies to you, you have the right
+      to access, correct, erase, restrict and port your personal data, and to object to processing.</p>
+    <p>In practice these rights are mostly satisfied by the design: the only personal data we hold is the push
+      registration described in section 5, and you can erase it yourself at any moment by switching push off.
+      The call relay in section 5.1 keeps connection metadata only for operating and securing the service. For
+      anything else, or to complain, use the contact address in section 1. You may also complain to your
+      national supervisory authority.</p>
+    <p><strong>Legal basis</strong>, where one is required: consent for the push service and for location
+      sharing. Both are revocable at any moment from inside the app, and both sit behind an operating-system
+      permission prompt that you answer yourself — declining it means nothing is collected, whatever the in-app
+      switch says. Legitimate interest covers keeping the push service secure and operational.</p>
 
-    <h2>8. Retention and deletion</h2>
-    <p>We hold none of your data, so there is nothing for us to delete on our side. Everything lives on
-      your device. <strong>Uninstalling the app permanently destroys all messages and keys</strong> —
-      neither you nor we can recover them.</p>
+    <h2>12. Children</h2>
+    <p>Cubechat is intended for adults and is rated <strong>18+</strong>. It is not directed at children. If
+      you believe a child has provided us with personal data — which, given section 2, would be limited to a
+      push registration — contact us and it will be deleted.</p>
 
-    <h2>9. Children</h2>
-    <p>The app is not directed at children under 13 and collects no data from them.</p>
+    <h2>13. Security, honestly stated</h2>
+    <p>Cubechat is built to be private and its cryptography is implemented against published test vectors. It
+      is not audited by a third party, and you should weigh that.</p>
+    <p>Known limitations, stated plainly because you deserve to know them:</p>
+    <ul>
+      <li><strong>Group rooms are not forward-secret</strong>, and their key is derived from a name and a
+        password.</li>
+      <li><strong>Received media is stored decrypted</strong> inside the app’s private container, protected by
+        the operating system’s app sandbox rather than by a second layer of encryption.</li>
+      <li><strong>Relay metadata is real</strong>, as described in section 4.2.</li>
+      <li><strong>A phone that is unlocked and in someone else’s hands</strong> can read Cubechat, as it can
+        read any messenger.</li>
+    </ul>
 
-    <h2>10. Changes to this policy</h2>
-    <p>If this policy changes we will update this page and the date shown at the top.</p>
+    <h2>14. Changes</h2>
+    <p>If this policy changes materially, the app will say so and the date at the top will change. The current
+      version is always published at <a href="https://cubechat.tech/privacy">cubechat.tech/privacy</a>.</p>
 
-    <h2>11. Contact</h2>
-    <p>Privacy enquiries: <a href="mailto:FILL_IN@EMAIL">FILL_IN@EMAIL</a></p>
+    <h2>15. Contact</h2>
+    <p>Write to <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a> with any question about this
+      policy, to exercise a right described in section 11, or to report a security problem.</p>
   </section>
 
-  <footer class="meta">© <span id="y"></span> cubechat · <a href="/">cubechat.app</a></footer>
+  <footer class="meta">© <span id="y"></span> Cubechat · <a href="/">cubechat.tech</a></footer>
 </div>
 
 <script>

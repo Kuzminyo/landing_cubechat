@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cubechat — Політика конфіденційності / Privacy Policy</title>
-<meta name="description" content="Cubechat privacy policy — no account, end-to-end encryption, and exactly what the push service, call relay and friends map can see." />
+<meta name="description" content="Cubechat privacy policy — no account, end-to-end encryption, and exactly what the push service, call relay, reports and friends map can see." />
 <link rel="icon" href="/cube.svg" type="image/svg+xml" />
 <link rel="canonical" href="https://cubechat.tech/privacy.html" />
 <style>
@@ -57,7 +57,7 @@
   <!-- ============================ УКРАЇНСЬКА ============================ -->
   <section data-lang="uk" class="on">
     <h1>Політика конфіденційності</h1>
-    <p class="meta">Останнє оновлення: 14 вересня 2026 року</p>
+    <p class="meta">Останнє оновлення: 25 вересня 2026 року</p>
 
     <p class="lede">Cubechat — це месенджер, який працює напряму між пристроями. Повідомлення йдуть від
       телефона до телефона через Bluetooth Low Energy, а за бажанням — ще й через публічні релеї, які
@@ -66,6 +66,9 @@
 
     <p>Ця політика описує, що саме застосунок робить з даними, разом із тими частинами, які приватними не є.
       Месенджер, який перебільшує свою приватність, небезпечніший за той, у якого її немає зовсім.</p>
+
+    <p><em>Цей документ написаний із вихідного коду і не є юридичною консультацією — перед тим, як на нього
+      покладатися, дайте його на перевірку юристу.</em></p>
 
     <h2>1. Хто відповідає</h2>
     <p><strong>Володілець даних:</strong> Kuzminyo<br />
@@ -94,9 +97,10 @@
       <li>закріплені, архівовані, приховані розмови та папки;</li>
       <li>діагностичний журнал усередині застосунку (останні 1000 рядків).</li>
     </ul>
-    <p>Нічого з цього нікуди не вивантажується. Усе зникає, коли ви видаляєте застосунок, користуєтеся
-      <strong>екстреним стиранням</strong> або коли спрацьовує налаштований вами <strong>вимикач на випадок
-      мовчання</strong>.</p>
+    <p>Історія залишається на телефоні, якщо ви самі не виберете повідомлення й не натиснете
+      «Поскаржитися». Тоді надсилається лише вибраний уривок, описаний нижче. Локальні копії зникають, коли
+      ви видаляєте застосунок, користуєтеся <strong>екстреним стиранням</strong> або коли спрацьовує
+      налаштований вами <strong>вимикач на випадок мовчання</strong>.</p>
     <p>Діагностичний журнал залишається на пристрої, доки ви свідомо не експортуєте його й не надішлете
       комусь. У ньому є фрагменти відкритих ключів, час, стани транспорту та повідомлення про помилки. У ньому
       <strong>немає</strong> тексту повідомлень, фотографій чи вашого місцезнаходження.</p>
@@ -128,6 +132,20 @@
     <p>Ключ кімнати виводиться з її назви та пароля. Будь-хто, хто знає і те, і те, може читати кімнату.
       Кімнати не мають випереджувальної секретності, а пароль кімнати вартий рівно тієї обережності, з якою
       ви його передали.</p>
+
+    <h3>4.4 AirDrop (надсилання файлів комусь поруч)</h3>
+    <p>Файли, які ви надсилаєте комусь поруч через AirDrop, ідуть напряму з одного телефона на інший —
+      типово через Bluetooth, як і будь-яке повідомлення. Вони також можуть іти через локальну мережу Wi-Fi,
+      коли обидва телефони в ній, зашифровані ключем, який існує лише для цього передавання; сервер тут не
+      задіяний.</p>
+    <div class="card"><p><strong>Поки відкрита сторінка AirDrop або для отримання ввімкнено «Усі», ваш
+      телефон можуть знайти люди поруч</strong>, навіть якщо в профілі вимкнено «Помітність поруч». На цей час
+      він відповідає на Bluetooth-рукостискання телефонів, яких не знає, і відкрито, без шифрування передає
+      свій підписаний анонс — ваш відкритий ключ, нікнейм і фото профілю — телефонам, з якими з’єднаний, а ті
+      передають його далі мережею.</p></div>
+    <p>Якщо на сторінці AirDrop прикласти телефони один до одного, ваш телефон ще й сам з’єднається з іншим,
+      щоб вони могли обмінятися файлами чи контактними картками. Щойно ви йдете зі сторінки (або «Усі» саме
+      вимикається через десять хвилин), телефон знову відповідає лише тим, хто його вже знає.</p>
 
     <h2>5. Служба сповіщень</h2>
     <p>Щоб розбудити телефон із повністю закритим застосунком, Cubechat тримає одну невелику службу за адресою
@@ -219,6 +237,30 @@
       нікуди не вивантажується, окрім тієї розмови, у яку ви це надсилаєте, — зашифрованим.</p>
     <p>Отримані файли зберігаються всередині приватного сховища застосунку.</p>
 
+    <h2>7a. Скарги та модерація</h2>
+    <p>Коли ви натискаєте «Поскаржитися», застосунок надсилає підписану скаргу через HTTPS на наш
+      push-сервер. Вона містить ваш відкритий ключ підпису, причину й необов’язковий коментар, відкритий ключ
+      особи (і її Nostr-ключ, якщо ваш телефон його знає) або відбиток автора каналу, а для скарги на конкретне
+      повідомлення — його тип, час і вибраний текст або підпис до 4000 символів (надіслане місцезнаходження чи
+      картка контакту йде як однорядкова назва, без вмісту). Скарга на канал також містить назву каналу.
+      Звичайні повідомлення, на які ви не скаржитеся, не надсилаються нам. Без мережі скарга чекає у
+      зашифрованому сховищі телефона до семи днів і підписується знову перед надсиланням.</p>
+    <p>Розробник розглядає скарги через приватного бота модерації в Telegram. Бот передає Telegram як
+      сторонній службі причину, примітку, скорочені ключі скаржника й адресата та до 1000 символів уривка
+      вибраного повідомлення. Сервер зберігає скаргу, доки її не буде розглянуто, а потім видаляє її
+      автоматично через 90 днів після рішення; нерозглянута скарга зберігається, доки рішення не буде
+      ухвалено. Після бану сервер публікує підписаний список лише відкритих ключів особистостей, Nostr-ключів
+      і відбитків авторів каналів. Застосунки завантажують його, щоб приховати заблокованих. Текст скарги й
+      ваш коментар до публічного списку не потрапляють. Забанений ключ залишається в цьому публічному списку,
+      доки розробник не зніме бан, — видалення скарги через 90 днів на сам бан не впливає.</p>
+    <p><strong>Завантаження списку банів.</strong> Кожна копія застосунку завантажує цей список з
+      <code>push.cubechat.tech/banned</code> під час запуску й раз на шість годин, поки застосунок відкритий,
+      — незалежно від того, чи увімкнені сповіщення або ретранслятори. Запит не містить нічого про вас — ні
+      ключа, ні токена — лише те, що видно з будь-якого з’єднання: вашу IP-адресу. Список однаковий для
+      всіх.</p>
+    <p>Фільтр образливого вмісту працює лише на вашому телефоні. Нічого з того, що він згортає, нікуди не
+      надсилається.</p>
+
     <h2>8. Чого Cubechat не робить</h2>
     <ul>
       <li><strong>Жодної аналітики.</strong> Ні Firebase Analytics, ні Crashlytics, ні Sentry, ні Amplitude,
@@ -258,21 +300,21 @@
     <p>Якщо до вас застосовуються GDPR, GDPR Великої Британії або Закон України «Про захист персональних
       даних», ви маєте право на доступ, виправлення, стирання, обмеження обробки та перенесення своїх
       персональних даних, а також право заперечувати проти обробки.</p>
-    <p>На практиці ці права здебільшого задовольняються самою будовою застосунку: єдині персональні дані, які
-      ми тримаємо, — це реєстрація у службі сповіщень, описана в розділі 5, і ви можете стерти її самостійно
-      будь-якої миті, вимкнувши сповіщення. Ретранслятор дзвінків із розділу 5.1 зберігає метадані з’єднань
-      лише для роботи й захисту служби. З усього іншого або зі скаргою звертайтеся на адресу з розділу 1. Ви
-      також маєте право поскаржитися до наглядового органу своєї країни.</p>
+    <p>На практиці ці права здебільшого задовольняються самою будовою застосунку: реєстрацію у службі
+      сповіщень можна стерти, вимкнувши сповіщення. Подані вами скарги також зберігаються на нашому сервері;
+      щодо доступу чи видалення зверніться до нас. Ретранслятор дзвінків із розділу 5.1 зберігає метадані
+      з’єднань лише для роботи й захисту служби. З усього іншого або зі скаргою звертайтеся на адресу з
+      розділу 1. Ви також маєте право поскаржитися до наглядового органу своєї країни.</p>
     <p><strong>Правова підстава</strong>, де вона потрібна: згода — для служби сповіщень і для показу
       місцезнаходження. І те, і те скасовується будь-якої миті зсередини застосунку, і за обома стоїть запит
       дозволу операційної системи, на який відповідаєте ви самі: відмова там означає, що не збирається нічого,
       хай там що показує перемикач у застосунку. Законний інтерес покриває підтримання служби сповіщень у
-      безпечному й робочому стані.</p>
+      безпечному й робочому стані та розгляд скарг про зловживання, які ви подаєте самі.</p>
 
     <h2>12. Діти</h2>
-    <p>Cubechat призначений для дорослих і має вікову категорію <strong>18+</strong>. Він не призначений для
-      дітей. Якщо ви вважаєте, що дитина надала нам персональні дані — а це, з огляду на розділ 2, могла б
-      бути лише реєстрація у службі сповіщень, — напишіть нам, і їх буде видалено.</p>
+    <p>Cubechat призначений для дорослих віком від <strong>18 років</strong>. Він не призначений для дітей.
+      Якщо ви вважаєте, що дитина надала нам персональні дані — зокрема реєстрацію у службі сповіщень або
+      подану скаргу, — напишіть нам, і їх буде видалено.</p>
 
     <h2>13. Безпека, сказана чесно</h2>
     <p>Cubechat побудований так, щоб бути приватним, а його криптографія перевірена на опублікованих тестових
@@ -295,12 +337,14 @@
     <h2>15. Контакт</h2>
     <p>Пишіть на <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a> з будь-яким питанням щодо цієї
       політики, щоб скористатися правом із розділу 11 або щоб повідомити про проблему з безпекою.</p>
+
+    <p class="meta" style="margin-top:32px;">Умови користування: <a href="https://cubechat.tech/terms">cubechat.tech/terms</a></p>
   </section>
 
   <!-- ============================== ENGLISH ============================== -->
   <section data-lang="en">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: 14 September 2026</p>
+    <p class="meta">Last updated: 25 September 2026</p>
 
     <p class="lede">Cubechat is a peer-to-peer messenger. Messages travel directly between phones over
       Bluetooth Low Energy, and optionally through public relays that carry them sealed. There is no Cubechat
@@ -308,6 +352,9 @@
 
     <p>This policy describes exactly what the app does with data, including the parts that are not private,
       because a messenger that overstates its privacy is more dangerous than one that has none.</p>
+
+    <p><em>This document is written from the source code and is not legal advice; have it reviewed before you
+      rely on it.</em></p>
 
     <h2>1. Who is responsible</h2>
     <p><strong>Controller:</strong> Kuzminyo<br />
@@ -336,8 +383,9 @@
       <li>pinned, archived, hidden and foldered conversations;</li>
       <li>the in-app diagnostic log (the most recent 1000 lines).</li>
     </ul>
-    <p>None of it is uploaded anywhere. It is removed when you uninstall the app, use <strong>Emergency
-      Wipe</strong>, or when the <strong>dead man’s switch</strong> you configured fires.</p>
+    <p>This history stays on the phone unless you choose a message and tap Report; that report sends only the
+      selected excerpt described below. Local copies are removed when you uninstall the app, use
+      <strong>Emergency Wipe</strong>, or when the <strong>dead man’s switch</strong> you configured fires.</p>
     <p>The diagnostic log stays on the device unless you deliberately export it and send it to somebody. It
       contains public key fragments, timings, transport states and error messages. It does
       <strong>not</strong> contain message text, photos or your location.</p>
@@ -369,6 +417,19 @@
     <h3>4.3 Group rooms</h3>
     <p>A room’s key is derived from its name and password. Anyone who knows both can read the room. Rooms are
       not forward-secret, and a room password is only as good as the care taken in sharing it.</p>
+
+    <h3>4.4 AirDrop (sending files to someone nearby)</h3>
+    <p>Files you send someone nearby through AirDrop travel directly between the two phones, by default over
+      Bluetooth like any other message. They may also travel over the local Wi-Fi network when both phones are
+      on one, encrypted with a key that exists only for that transfer; no server is involved.</p>
+    <div class="card"><p><strong>While the AirDrop page is open, or “Everyone” is switched on for receiving,
+      your phone can be found by people nearby</strong> even if “Discoverable nearby” is off in your profile.
+      For that time it answers Bluetooth handshakes from phones it does not know, and sends its signed
+      announcement unencrypted — your public key, nickname and profile picture — to the phones it is linked to,
+      which pass it on through the mesh.</p></div>
+    <p>Holding two phones together on the AirDrop page also makes your phone connect to the other one by
+      itself, so the two can exchange files or contact cards. When you leave the page (or “Everyone” switches
+      itself off after ten minutes), your phone goes back to answering only people who already know it.</p>
 
     <h2>5. The push notification service</h2>
     <p>To wake a phone whose app is fully closed, Cubechat runs one small service at
@@ -459,6 +520,28 @@
       anywhere except to the conversation you send it to, encrypted.</p>
     <p>Media you receive is stored inside the app’s private container.</p>
 
+    <h2>7a. Reports and moderation</h2>
+    <p>When you tap Report, the app sends a signed complaint over HTTPS to our push service. It contains your
+      public signing key, the reason and optional note, the reported person’s public identity key (and their
+      Nostr public key, when your phone knows it) or channel-author fingerprint, and, if you reported a
+      specific message, its type, time and selected text or caption (up to 4,000 characters; a shared location
+      or contact card goes as its one-line label, not its contents). A channel report also names the channel.
+      Nothing is sent for an ordinary message you do not report. If you are offline, the report waits in
+      encrypted storage on your phone for up to seven days and is signed again when delivery resumes.</p>
+    <p>The developer reviews reports through a private Telegram moderation bot. The bot forwards the reason,
+      note, a shortened reporter and target key, and up to 1,000 characters of the selected message excerpt to
+      Telegram, a third-party service. The server keeps the report until it is decided, then deletes it 90 days
+      after the decision; an undecided report is kept until it is. A decision to ban publishes a signed list
+      containing public identity keys, Nostr public keys and channel-author fingerprints only. Every app can
+      download that public list to suppress banned senders. The list never contains report text or your note.
+      The banned key itself stays on that public list until the developer lifts the ban — the 90-day deletion
+      above is for the report, not the ban.</p>
+    <p><strong>The ban list download.</strong> Every copy of the app fetches that list from
+      <code>push.cubechat.tech/banned</code> when it starts and every six hours while it is open, whether or
+      not push or the relays are switched on. The request carries nothing about you — no key, no token — only
+      what any connection shows, your IP address. The list is the same for everyone.</p>
+    <p>The offensive-content filter runs on your phone only. Nothing about what it folds is sent anywhere.</p>
+
     <h2>8. What Cubechat does not do</h2>
     <ul>
       <li><strong>No analytics.</strong> No Firebase Analytics, no Crashlytics, no Sentry, no Amplitude, no
@@ -468,8 +551,8 @@
       <li><strong>No tracking as Apple’s App Tracking Transparency defines it.</strong> Nothing is linked to you
         or your device for advertising, and nothing is shared with a data broker.</li>
       <li><strong>No selling or sharing of personal data.</strong> There is nothing to sell.</li>
-      <li><strong>No content scanning.</strong> We cannot read your messages; the design makes it impossible
-        rather than merely forbidden.</li>
+      <li><strong>No server-side content scanning.</strong> We cannot read ordinary messages; the design makes
+        it impossible rather than merely forbidden.</li>
     </ul>
 
     <h2>9. Backups and transfers</h2>
@@ -496,20 +579,20 @@
     <h2>11. Your rights</h2>
     <p>If the GDPR, the UK GDPR or Ukraine’s law on personal data protection applies to you, you have the right
       to access, correct, erase, restrict and port your personal data, and to object to processing.</p>
-    <p>In practice these rights are mostly satisfied by the design: the only personal data we hold is the push
-      registration described in section 5, and you can erase it yourself at any moment by switching push off.
-      The call relay in section 5.1 keeps connection metadata only for operating and securing the service. For
-      anything else, or to complain, use the contact address in section 1. You may also complain to your
-      national supervisory authority.</p>
+    <p>Push registrations can be erased by switching push off. Submitted reports are also held by our service;
+      contact us to request access or deletion. The call relay in section 5.1 keeps connection metadata only
+      for operating and securing the service. For anything else, or to complain, use the contact address in
+      section 1. You may also complain to your national supervisory authority.</p>
     <p><strong>Legal basis</strong>, where one is required: consent for the push service and for location
       sharing. Both are revocable at any moment from inside the app, and both sit behind an operating-system
       permission prompt that you answer yourself — declining it means nothing is collected, whatever the in-app
-      switch says. Legitimate interest covers keeping the push service secure and operational.</p>
+      switch says. Legitimate interest covers keeping the push service secure and operational and reviewing
+      abuse reports you choose to submit.</p>
 
     <h2>12. Children</h2>
-    <p>Cubechat is intended for adults and is rated <strong>18+</strong>. It is not directed at children. If
-      you believe a child has provided us with personal data — which, given section 2, would be limited to a
-      push registration — contact us and it will be deleted.</p>
+    <p>Cubechat is intended for adults aged <strong>18+</strong>. It is not directed at children. If you
+      believe a child has provided us with personal data — which, given section 2, could include a push
+      registration or a submitted report — contact us and it will be deleted.</p>
 
     <h2>13. Security, honestly stated</h2>
     <p>Cubechat is built to be private and its cryptography is implemented against published test vectors. It
@@ -532,6 +615,8 @@
     <h2>15. Contact</h2>
     <p>Write to <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a> with any question about this
       policy, to exercise a right described in section 11, or to report a security problem.</p>
+
+    <p class="meta" style="margin-top:32px;">Terms of Use: <a href="https://cubechat.tech/terms">cubechat.tech/terms</a></p>
   </section>
 
   <footer class="meta">© <span id="y"></span> Cubechat · <a href="/">cubechat.tech</a></footer>

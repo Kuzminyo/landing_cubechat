@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cubechat — Умови використання / Terms of Use</title>
+<meta name="description" content="Cubechat terms of use — a peer-to-peer messenger with no account: what you're responsible for, reports and enforcement, delivery, warranty and governing law." />
+<link rel="icon" href="/cube.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://cubechat.tech/terms.html" />
+<style>
+  :root { --bg:#06140d; --fg:#ffffff; --accent:#2edb8f; --mut:rgba(255,255,255,.55); --dim:rgba(255,255,255,.38); --line:rgba(255,255,255,.08); }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); }
+  body { font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 96px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  header { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-bottom:28px; border-bottom:1px solid var(--line); }
+  .brand { display:flex; align-items:center; gap:10px; font-size:20px; font-weight:600; letter-spacing:-.02em; }
+  .dot { width:9px; height:9px; border-radius:99px; background:var(--accent); box-shadow:0 0 8px 2px rgba(46,219,143,.55); }
+  .toggle { display:flex; gap:4px; background:rgba(255,255,255,.04); border-radius:8px; padding:4px; }
+  .toggle button { appearance:none; border:0; background:transparent; color:var(--mut); font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+                   letter-spacing:.14em; text-transform:uppercase; padding:8px 12px; border-radius:6px; cursor:pointer; }
+  .toggle button[aria-pressed="true"] { background:rgba(46,219,143,.14); color:var(--accent); }
+  h1 { font-size:32px; line-height:1.2; letter-spacing:-.02em; margin:40px 0 8px; }
+  h2 { font-size:19px; letter-spacing:-.01em; margin:40px 0 10px; }
+  h3 { font-size:16px; letter-spacing:-.01em; margin:28px 0 8px; color:rgba(255,255,255,.85); }
+  p, li { color:var(--mut); }
+  li { margin:6px 0; }
+  ul { padding-left:20px; }
+  .meta { font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--dim); letter-spacing:.06em; }
+  .lede { color:rgba(255,255,255,.75); font-size:17px; border-left:2px solid var(--accent); padding-left:16px; margin:24px 0 0; }
+  .card { background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin:18px 0; }
+  .card p:first-child { margin-top:0; } .card p:last-child { margin-bottom:0; }
+  strong { color:rgba(255,255,255,.9); font-weight:600; }
+  code { font:13px ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(255,255,255,.06); padding:2px 6px; border-radius:4px; color:var(--accent); }
+  .table { overflow-x:auto; margin:16px 0; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--line); color:var(--mut); }
+  th { color:rgba(255,255,255,.85); font-weight:600; }
+  footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--line); }
+  [data-lang] { display:none; }
+  [data-lang].on { display:block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand"><span class="dot"></span>Cubechat</div>
+    <div class="toggle" role="group" aria-label="Language">
+      <button type="button" data-set="uk" aria-pressed="true">Українська</button>
+      <button type="button" data-set="en" aria-pressed="false">English</button>
+    </div>
+  </header>
+
+  <!-- ============================ УКРАЇНСЬКА ============================ -->
+  <section data-lang="uk" class="on">
+    <h1>Умови користування</h1>
+    <p class="meta">Останнє оновлення: 25 вересня 2026 року</p>
+
+    <p class="lede"><em>Цей документ не є юридичною консультацією — перед тим, як на нього покладатися, дайте
+      його на перевірку юристу.</em></p>
+
+    <p>Встановлюючи Cubechat або користуючись ним, ви погоджуєтеся з цими умовами. Якщо ви не погоджуєтеся —
+      не користуйтеся застосунком.</p>
+
+    <h2>1. Що таке Cubechat</h2>
+    <p>Cubechat — це месенджер, що працює напряму між пристроями. Він переносить повідомлення через Bluetooth
+      Low Energy і, за бажанням, через публічні релеї, якими керують сторонні особи. Облікового запису немає,
+      сервера повідомлень Cubechat немає.</p>
+    <p>Застосунок надає Kuzminyo («ми», «нас»), зв’язатися можна за
+      <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a>.</p>
+
+    <h2>2. За що відповідаєте ви</h2>
+    <p><strong>За свої ключі та свій пристрій.</strong> Ваша особистість — це пара ключів, що зберігається на
+      телефоні. Копії в нас немає, відновити її ми не можемо. Якщо ви загубите пристрій, видалите застосунок
+      або забудете парольну фразу від резервної копії, ця особистість та її історія зникнуть назавжди. Робіть
+      резервні копії, якщо історія для вас важлива.</p>
+    <p><strong>За свої повідомлення.</strong> Ви відповідаєте за те, що надсилаєте, і за закон тієї країни, де
+      ви є. Ми не допускаємо цькування, погроз, сексуального вмісту за участю неповнолітніх, спаму,
+      протиправного вмісту, видавання себе за інших і поширення шкідливих програм.</p>
+    <p><strong>За паролі своїх кімнат.</strong> Групову кімнату може читати будь-хто, хто знає її назву та
+      пароль. Передавайте їх відповідно.</p>
+    <p><strong>За законність використання шифрування.</strong> У деяких країнах програми з шифруванням
+      обмежені. Користування Cubechat там, де це протиправно, — ваша відповідальність, не наша.</p>
+
+    <h2>3. Скарги та заходи</h2>
+    <p>Звичайні повідомлення мають наскрізне шифрування й не доступні нам. Якщо ви самі натиснете
+      «Поскаржитися» на повідомлення або особу, застосунок надішле вибрану скаргу службі модерації, разом із
+      текстом або підписом вибраного повідомлення. Ми розглядаємо кожну скаргу й реагуємо на неї протягом 24
+      годин, а тих, хто порушує ці правила, блокуємо: їхній відкритий ключ особи чи автора каналу потрапляє до
+      підписаного списку банів, який застосовує кожна копія застосунку, і наші сервери перестають їх
+      обслуговувати. Скарга також блокує цю людину для вас і одразу прибирає повідомлення з екрана. Приховати
+      повідомлення чи заблокувати людину можна й без скарги, а фільтр образливого вмісту, увімкнений за
+      замовчуванням, згортає грубі слова від тих, кому ви ще не писали, і в каналах.</p>
+    <p>Не подавайте свідомо неправдивих або зловмисних скарг. Скарга не надсилає нам усю розмову — лише
+      вибраний вміст.</p>
+
+    <h2>4. Вік</h2>
+    <p>Користуватися Cubechat можуть лише особи віком від 18 років.</p>
+
+    <h2>5. Доставка — за можливості</h2>
+    <p>Cubechat переносить повідомлення через Bluetooth і, за бажанням, через релеї. Доставка залежить від
+      дальності радіозв’язку, доступності релеїв, від того, чи увімкнений другий пристрій, і від того, чи
+      дозволяє операційна система працювати у фоні.</p>
+    <div class="card"><p><strong>Повідомлення можуть затриматися або не дійти.</strong> Не покладайтеся на
+      Cubechat там, де невдала чи запізніла доставка завдасть шкоди: в надзвичайній ситуації, для медичного,
+      фінансового чи критичного для безпеки зв’язку, та скрізь, де потрібен надійний канал.</p></div>
+    <p>Сповіщення для закритого застосунку залежать від служб Apple і Google та від додаткової служби,
+      описаної в Політиці конфіденційності. Це також не гарантовано.</p>
+
+    <h2>6. Релеї не наші</h2>
+    <p>Релеї Nostr, які використовує додатковий інтернет-резерв, — це публічні служби сторонніх осіб. Ми ними
+      не керуємо, не гарантуємо їхньої доступності й не відповідаємо ані за їхню поведінку, ані за строки
+      зберігання в них. Ви можете редагувати список релеїв, а сама можливість вимкнена, доки ви її не
+      увімкнете.</p>
+
+    <h2>7. Без гарантій</h2>
+    <p>Cubechat надається «як є» та «як доступно», без жодних гарантій, прямих чи непрямих, зокрема щодо
+      придатності до продажу, придатності для певної мети та відсутності порушення прав.</p>
+    <p>Його криптографія перевірена на опублікованих тестових векторах, але застосунок <strong>не</strong>
+      проходив незалежного аудиту безпеки. Ми не гарантуємо ані відсутності хиб, ані захисту від рішучого чи
+      добре забезпеченого супротивника.</p>
+
+    <h2>8. Обмеження відповідальності</h2>
+    <p>У межах, дозволених законом, ми не відповідаємо за непрямі, побічні, спеціальні, наслідкові чи штрафні
+      збитки, а також за втрачені дані, втрачений прибуток чи повідомлення, які затрималися, зникли або були
+      прочитані кимось іншим.</p>
+    <p>Ніщо тут не обмежує відповідальності, яку обмежувати не дозволено законом, — зокрема за смерть чи
+      тілесні ушкодження внаслідок недбалості, за шахрайство і, якщо ви споживач, за ваші обов’язкові права за
+      законом.</p>
+
+    <h2>9. Відкритий код і ліцензії</h2>
+    <p>Cubechat побудований на сторонніх компонентах з відкритим кодом, кожен зі своєю ліцензією. До цих
+      компонентів застосовуються їхні умови.</p>
+
+    <h2>10. Зміни в застосунку та в цих умовах</h2>
+    <p>Застосунок змінюється; можливості можуть додаватися, змінюватися чи зникати. Разом з ним можуть
+      змінюватися й ці умови, а дата вгорі скаже коли. Продовження користування після зміни означає, що ви її
+      приймаєте. Про суттєві зміни буде оголошено в застосунку.</p>
+
+    <h2>11. Припинення</h2>
+    <p>Ви можете припинити будь-коли, видаливши застосунок. Оскільки облікового запису немає, закривати
+      нічого.</p>
+    <p>Ми можемо припинити роботу додаткової служби сповіщень. Застосунок працює й без неї: повідомлення
+      надходять, коли ви відкриваєте застосунок або поки він працює.</p>
+
+    <h2>12. Застосовне право</h2>
+    <p>Ці умови регулюються правом України, без урахування його колізійних норм. Якщо ви споживач, це не
+      позбавляє вас захисту за обов’язковими нормами права країни вашого проживання.</p>
+
+    <h2>13. Контакт</h2>
+    <p><a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a></p>
+
+    <p class="meta" style="margin-top:32px;">Політика конфіденційності: <a href="https://cubechat.tech/privacy">cubechat.tech/privacy</a></p>
+  </section>
+
+  <!-- ============================== ENGLISH ============================== -->
+  <section data-lang="en">
+    <h1>Terms of Use</h1>
+    <p class="meta">Last updated: 25 September 2026</p>
+
+    <p class="lede"><em>This document is not legal advice; have it reviewed before you rely on it.</em></p>
+
+    <p>By installing or using Cubechat you agree to these terms. If you do not agree, do not use the app.</p>
+
+    <h2>1. What Cubechat is</h2>
+    <p>Cubechat is a peer-to-peer messenger. It carries messages between devices over Bluetooth Low Energy
+      and, optionally, through public relays operated by unrelated third parties. There is no account and no
+      Cubechat message server.</p>
+    <p>The app is provided by Kuzminyo (“we”, “us”), reachable at
+      <a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a>.</p>
+
+    <h2>2. What you are responsible for</h2>
+    <p><strong>Your keys and your device.</strong> Your identity is a key pair stored on your phone. We hold
+      no copy and cannot restore it. If you lose the device, delete the app or forget a backup passphrase,
+      that identity and its history are gone permanently. Keep backups if the history matters to you.</p>
+    <p><strong>Your messages.</strong> You are responsible for what you send and for the law where you are. We
+      have zero tolerance for harassment, threats, sexual content involving minors, spam, unlawful content,
+      impersonation and malware.</p>
+    <p><strong>Your room passwords.</strong> A group room can be read by anyone who knows its name and
+      password. Share them accordingly.</p>
+    <p><strong>Legal use of encryption.</strong> Some jurisdictions restrict encryption software. Using
+      Cubechat where it is unlawful to do so is your responsibility, not ours.</p>
+
+    <h2>3. Reports and enforcement</h2>
+    <p>Ordinary messages are end-to-end encrypted and are not visible to us. If you choose Report on a message
+      or person, the app sends the selected complaint to our moderation service, including the selected
+      message text or caption when one was chosen. We review every report and act on it within 24 hours, and
+      users who break these rules are banned: their public identity or channel author key goes on a signed ban
+      list that every copy of the app applies, and our servers stop serving them. Reporting also blocks the
+      person for you and takes the message off your screen at once. You can hide a message or block a person
+      without reporting, and an offensive-content filter, on by default, folds rude words from people you have
+      not written to and in channels.</p>
+    <p>Do not submit knowingly false or malicious reports. A report is not a way to send us your entire
+      conversation; only the selected content is transmitted.</p>
+
+    <h2>4. Age</h2>
+    <p>You must be at least 18 years old to use Cubechat.</p>
+
+    <h2>5. Delivery is best effort</h2>
+    <p>Cubechat carries messages over Bluetooth and, optionally, relays. Delivery depends on radio range, on
+      the relays being reachable, on the other device being on, and on the operating system permitting
+      background work.</p>
+    <div class="card"><p><strong>Messages can be delayed or lost.</strong> Do not rely on Cubechat where a
+      failed or late delivery would cause harm — in an emergency, for medical, financial or safety-critical
+      communication, or anywhere a reliable channel is required.</p></div>
+    <p>Notifications for a closed app depend on Apple’s and Google’s services and on the optional service
+      described in the Privacy Policy. None of that is guaranteed either.</p>
+
+    <h2>6. The relays are not ours</h2>
+    <p>The Nostr relays used by the optional internet fallback are public services run by third parties. We do
+      not control them, do not guarantee their availability, and are not responsible for their conduct or their
+      retention. You may edit the relay list, and the feature is off unless you enable it.</p>
+
+    <h2>7. No warranty</h2>
+    <p>Cubechat is provided “as is” and “as available”, without warranty of any kind, express or implied,
+      including merchantability, fitness for a particular purpose and non-infringement.</p>
+    <p>Its cryptography is implemented against published test vectors, but the app has <strong>not</strong>
+      undergone an independent security audit. We do not warrant that it is free of defects or that it will
+      protect you against a determined or well resourced adversary.</p>
+
+    <h2>8. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, we are not liable for indirect, incidental, special,
+      consequential or punitive damages, nor for lost data, lost profits, or messages that were delayed, lost
+      or read by somebody else.</p>
+    <p>Nothing here limits liability that cannot lawfully be limited — including for death or personal injury
+      caused by negligence, for fraud, or, where you are a consumer, for your mandatory statutory rights.</p>
+
+    <h2>9. Open source and licences</h2>
+    <p>Cubechat is built on third-party open-source components, each under its own licence. Their terms govern
+      those components.</p>
+
+    <h2>10. Changes to the app and to these terms</h2>
+    <p>The app changes; features may be added, altered or removed. These terms may change with it, and the
+      date at the top will say when. Continuing to use the app after a change means you accept it. Material
+      changes will be announced in the app.</p>
+
+    <h2>11. Ending</h2>
+    <p>You may stop at any time by uninstalling the app. Because there is no account, there is nothing to
+      close.</p>
+    <p>We may cease operating the optional push notification service. The app keeps working without it;
+      messages arrive when the app is opened or while it is running.</p>
+
+    <h2>12. Governing law</h2>
+    <p>These terms are governed by the law of Ukraine, without regard to its conflict-of-law rules. If you are
+      a consumer, this does not deprive you of the protection of the mandatory law of your own country of
+      residence.</p>
+
+    <h2>13. Contact</h2>
+    <p><a href="mailto:cubechatble@gmail.com">cubechatble@gmail.com</a></p>
+
+    <p class="meta" style="margin-top:32px;">Privacy Policy: <a href="https://cubechat.tech/privacy">cubechat.tech/privacy</a></p>
+  </section>
+
+  <footer class="meta">© <span id="y"></span> Cubechat · <a href="/">cubechat.tech</a></footer>
+</div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  var btns = document.querySelectorAll('.toggle button');
+  function set(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function (s) {
+      s.classList.toggle('on', s.getAttribute('data-lang') === lang);
+    });
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === lang)); });
+    try { localStorage.setItem('cubechat-terms-lang', lang); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
+  var saved = null;
+  try { saved = localStorage.getItem('cubechat-terms-lang'); } catch (e) {}
+  if (saved !== 'uk' && saved !== 'en') {
+    // No stored choice: English only for browsers that ask for it, Ukrainian otherwise.
+    saved = (navigator.language || '').toLowerCase().indexOf('en') === 0 ? 'en' : 'uk';
+  }
+  set(saved);
+</script>
+</body>
+</html>

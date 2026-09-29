@@ -57,7 +57,7 @@
   <!-- ============================ УКРАЇНСЬКА ============================ -->
   <section data-lang="uk" class="on">
     <h1>Політика конфіденційності</h1>
-    <p class="meta">Останнє оновлення: 25 вересня 2026 року</p>
+    <p class="meta">Останнє оновлення: 29 вересня 2026 року</p>
 
     <p class="lede">Cubechat — це месенджер, який працює напряму між пристроями. Повідомлення йдуть від
       телефона до телефона через Bluetooth Low Energy, а за бажанням — ще й через публічні релеї, які
@@ -261,6 +261,26 @@
     <p>Фільтр образливого вмісту працює лише на вашому телефоні. Нічого з того, що він згортає, нікуди не
       надсилається.</p>
 
+    <h2>7b. Cube ID — коротке @ім’я (необов’язково)</h2>
+    <p>У Профілі → Cube ID можна зайняти коротке ім’я на кшталт <code>@dima</code>, щоб вас знаходили без
+      QR-коду. Це не обліковий запис: немає пароля, пошти чи номера телефона, а ім’я належить ключу на вашому
+      телефоні.</p>
+    <p><strong>Що зберігає <code>id.cubechat.tech</code>, поки у вас є ім’я:</strong> саме ім’я; вашу публічну
+      картку контакту — ті самі відкриті ключі, нікнейм і відбиток аватара, що й у QR-коді; налаштування «Хто
+      може писати мені з інтернету»; час, коли ім’я було зайняте й востаннє продовжене. Кожна зміна підписана
+      вашим ключем. Після зміни імені старе ще 30 днів вказує на вас, щоб його не зайняв хтось інший.
+      Ідентифікатори підписаних запитів зберігаються до години для захисту від повторів. Образливе ім’я, яке
+      прибрав модератор, залишається у списку заблокованих імен разом із причиною, щоб його не видали знову.</p>
+    <p><strong>Ім’я публічне.</strong> Будь-хто, хто його знає, отримує вашу картку контакту і може вам
+      написати — хіба що ви оберете «Ніхто», тоді сервер картку не видає. Зворотного пошуку «ключ → ім’я» немає,
+      каталогу імен теж. Ім’я разом із вашим Nostr-ключем також відповідає за стандартом Nostr NIP-05.</p>
+    <p><strong>IP-адреса</strong> вашого запиту використовується лише в пам’яті сервера, щоб обмежити частоту
+      запитів, і до бази імен не записується.</p>
+    <p><strong>Скільки зберігається.</strong> Застосунок сам продовжує ім’я раз на тиждень; ім’я, яке не
+      продовжували 6 місяців, видаляється. «Звільнити» видаляє його одразу. Екстрене стирання теж намагається
+      його звільнити, але не чекає сервер довше трьох секунд — без мережі ім’я зникне через 6 місяців. Ім’я
+      забаненого ключа видаляється. Резервні копії бази імен зберігаються 14 днів.</p>
+
     <h2>8. Чого Cubechat не робить</h2>
     <ul>
       <li><strong>Жодної аналітики.</strong> Ні Firebase Analytics, ні Crashlytics, ні Sentry, ні Amplitude,
@@ -291,6 +311,8 @@
         заданого вами часу без активності.</li>
       <li><strong>Реєстрацію в службі сповіщень</strong> буде видалено з нашого сервера, щойно ви вимкнете
         сповіщення.</li>
+      <li><strong>Cube ID</strong> — Профіль → Cube ID → «Звільнити» видаляє ваше ім’я і картку з
+        <code>id.cubechat.tech</code> одразу (розділ 7b).</li>
       <li><strong>Релеї Nostr</strong> — це сторонні особи з власними строками зберігання. Кадр, який уже
         опубліковано, ми відкликати з них не можемо. Це шифротекст, і релеї зазвичай видаляють події за
         власним розкладом.</li>
@@ -344,7 +366,7 @@
   <!-- ============================== ENGLISH ============================== -->
   <section data-lang="en">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: 25 September 2026</p>
+    <p class="meta">Last updated: 29 September 2026</p>
 
     <p class="lede">Cubechat is a peer-to-peer messenger. Messages travel directly between phones over
       Bluetooth Low Energy, and optionally through public relays that carry them sealed. There is no Cubechat
@@ -542,6 +564,27 @@
       what any connection shows, your IP address. The list is the same for everyone.</p>
     <p>The offensive-content filter runs on your phone only. Nothing about what it folds is sent anywhere.</p>
 
+    <h2>7b. Cube ID — a short @name (optional)</h2>
+    <p>In Profile → Cube ID you can take a short name such as <code>@dima</code>, so people can find you
+      without a QR code. It is not an account: there is no password, e-mail or phone number, and the name
+      belongs to the key on your phone.</p>
+    <p><strong>What <code>id.cubechat.tech</code> keeps while you have a name:</strong> the name itself; your
+      public contact card — the same public keys, nickname and avatar digest a QR code carries; your “Who can
+      message me from the internet” setting; when the name was taken and last renewed. Every change is signed
+      by your key. After a rename the old name keeps pointing at you for 30 days so nobody else can take it.
+      The ids of signed requests are kept for up to an hour to stop replays. An offensive name removed by a
+      moderator stays on a list of blocked names, with the reason, so it is not handed out again.</p>
+    <p><strong>The name is public.</strong> Anyone who knows it gets your contact card and can write to you —
+      unless you choose “Nobody”, and then the server hands out no card at all. There is no reverse lookup from
+      a key to a name, and no directory of names. The name and your Nostr key are also answered under the Nostr
+      NIP-05 standard.</p>
+    <p><strong>Your IP address</strong> is used only in the server’s memory to limit request rates, and is not
+      written to the name database.</p>
+    <p><strong>How long it is kept.</strong> The app renews the name once a week; a name not renewed for 6
+      months is deleted. “Release” deletes it at once. Emergency Wipe also tries to release it but does not wait
+      for the server longer than three seconds — offline, the name disappears after 6 months. The name of a
+      banned key is removed. Backups of the name database are kept for 14 days.</p>
+
     <h2>8. What Cubechat does not do</h2>
     <ul>
       <li><strong>No analytics.</strong> No Firebase Analytics, no Crashlytics, no Sentry, no Amplitude, no
@@ -571,6 +614,8 @@
       <li><strong>The dead man’s switch</strong>, if you configured one, wipes the device after the period of
         inactivity you set.</li>
       <li><strong>Push registration</strong> is deleted from our service when you switch push off.</li>
+      <li><strong>Cube ID</strong> — Profile → Cube ID → “Release” deletes your name and card from
+        <code>id.cubechat.tech</code> at once (section 7b).</li>
       <li><strong>Nostr relays</strong> are third parties with their own retention. A frame already published
         cannot be recalled from them by us. It is ciphertext, and relays typically expire events after a period
         of their choosing.</li>

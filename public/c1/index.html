@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Cubechat — картка контакту</title>
+<meta name="description" content="Someone shared their Cubechat contact card with you." />
+<link rel="icon" href="/cube.svg" type="image/svg+xml" />
+<style>
+  :root { --bg:#06140d; --fg:#ffffff; --accent:#2edb8f; --mut:rgba(255,255,255,.6); --line:rgba(255,255,255,.08); }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); }
+  body { font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:520px; margin:0 auto; padding:64px 20px 80px; text-align:center; }
+  .brand { display:inline-flex; align-items:center; gap:10px; font-size:18px; font-weight:600; }
+  .dot { width:9px; height:9px; border-radius:99px; background:var(--accent); box-shadow:0 0 8px 2px rgba(46,219,143,.55); }
+  h1 { font-size:30px; letter-spacing:-.02em; margin:44px 0 8px; }
+  p { color:var(--mut); }
+  .card { background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:28px 0; text-align:left; }
+  .card ol { margin:0; padding-left:20px; color:var(--mut); }
+  .card li { margin:6px 0; }
+  .btns { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+  a.btn, button.btn { display:block; width:100%; padding:13px 16px; border-radius:12px; border:0; background:rgba(46,219,143,.14); color:var(--accent); text-decoration:none; font:600 16px/1.2 inherit; cursor:pointer; }
+  a.btn.ghost { background:transparent; border:1px solid var(--line); color:var(--fg); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><span class="dot"></span>Cubechat</div>
+  <h1>Вам надіслали картку контакту</h1>
+  <p>Якщо Cubechat уже встановлено, посилання відкриється в застосунку саме.</p>
+
+  <div class="card">
+    <ol>
+      <li>Встановіть Cubechat.</li>
+      <li>Скопіюйте картку кнопкою нижче.</li>
+      <li>Відкрийте <strong>Профіль → Картка контакту</strong>, вставте її в поле внизу й натисніть «Додати».</li>
+    </ol>
+  </div>
+
+  <div class="btns">
+    <button class="btn" id="copy" type="button" hidden>Скопіювати картку</button>
+    <a class="btn" href="https://github.com/Kuzminyo/cubechat/releases/download/apk-latest/cubechat-universal.apk">Android — завантажити APK</a>
+    <a class="btn ghost" href="/downloads/cubechat-ios-sideload.txt">iPhone — як встановити</a>
+    <a class="btn ghost" href="/">Що таке Cubechat</a>
+  </div>
+</div>
+<script>
+  // The card is the fragment: it never reaches this server. The page only
+  // offers to copy it, for a phone where the app did not open the link.
+  (function () {
+    var card = decodeURIComponent((location.hash || '').slice(1));
+    if (card.indexOf('cubechat:c1:') === -1) return;
+    var btn = document.getElementById('copy');
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(location.href).then(function () {
+        btn.textContent = 'Скопійовано';
+      });
+    });
+  })();
+</script>
+</body>
+</html>

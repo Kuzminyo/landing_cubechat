@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["XGPPT9GNR2.app.cubechat"],
+        "components": [
+          { "/": "/u.html", "comment": "a shared Cube ID @name, in the fragment" },
+          { "/": "/c1", "comment": "a contact card, in the fragment" },
+          { "/": "/c1/", "comment": "the same, after GitHub Pages adds the slash" }
+        ]
+      }
+    ]
+  }
+}

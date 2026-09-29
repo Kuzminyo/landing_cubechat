@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cubechat.cubechat",
+      "sha256_cert_fingerprints": [
+        "E7:A1:7F:1F:7E:9A:39:0C:9C:16:81:54:28:5B:C7:2C:E0:02:00:DA:D0:36:57:15:56:66:BA:D3:E8:8D:AD:4E"
+      ]
+    }
+  }
+]

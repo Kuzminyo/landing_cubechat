@@ -63,6 +63,10 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          # dist/.well-known holds assetlinks.json and
+          # apple-app-site-association — what lets the app open cubechat.tech
+          # links. The action leaves dot-directories out unless told.
+          include-hidden-files: true
 
   deploy:
     needs: build

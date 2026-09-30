@@ -40,8 +40,9 @@
   </div>
 
   <div class="btns">
+    <a class="btn" id="open" hidden>Відкрити в Cubechat</a>
     <button class="btn" id="copy" type="button" hidden>Скопіювати картку</button>
-    <a class="btn" href="https://github.com/Kuzminyo/cubechat/releases/download/apk-latest/cubechat-universal.apk">Android — завантажити APK</a>
+    <a class="btn ghost" href="https://github.com/Kuzminyo/cubechat/releases/download/apk-latest/cubechat-universal.apk">Android — завантажити APK</a>
     <a class="btn ghost" href="/downloads/cubechat-ios-sideload.txt">iPhone — як встановити</a>
     <a class="btn ghost" href="/">Що таке Cubechat</a>
   </div>
@@ -59,6 +60,24 @@
         btn.textContent = 'Скопійовано';
       });
     });
+
+    // The same hand-over as /u.html: intent:// on Android (straight away,
+    // falling back here with ?noapp=1), cubechat:// on a tap on iOS.
+    var ua = navigator.userAgent;
+    var android = /Android/i.test(ua);
+    var ios = /iPhone|iPad|iPod/i.test(ua);
+    if (!android && !ios) return;
+    var c = encodeURIComponent(card);
+    var fallback = location.origin + location.pathname + '?noapp=1' + location.hash;
+    var app = android
+      ? 'intent://cubechat.tech/c1?c=' + c +
+        '#Intent;scheme=https;package=com.cubechat.cubechat;S.browser_fallback_url=' +
+        encodeURIComponent(fallback) + ';end'
+      : 'cubechat://c1?c=' + c;
+    var open = document.getElementById('open');
+    open.href = app;
+    open.hidden = false;
+    if (android && location.search.indexOf('noapp=1') === -1) location.replace(app);
   })();
 </script>
 </body>

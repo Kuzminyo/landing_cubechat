@@ -157,8 +157,8 @@ const uk = {
       'Встановіть, згенеруйте ключ — і ви в мережі. Жодного екрана реєстрації, бо немає акаунта, який треба реєструвати.',
     androidTop: 'Завантажити для',
     android: 'Android',
-    iosTop: 'Сайдлоад для',
-    ios: 'iOS',
+    iosTop: 'Завантажити в',
+    ios: 'App Store',
     note: 'Android і iOS використовують справжній Bluetooth · веб і десктоп лише інтерфейс',
   },
   footer: {
@@ -348,8 +348,8 @@ const en: Dict = {
       "Install it, generate your key, and you're on the mesh. No sign-up screen, because there's no account to sign up for.",
     androidTop: 'Download for',
     android: 'Android',
-    iosTop: 'Sideload for',
-    ios: 'iOS',
+    iosTop: 'Download on the',
+    ios: 'App Store',
     note: 'Android & iOS use real Bluetooth · web & desktop run the UI only',
   },
   footer: {

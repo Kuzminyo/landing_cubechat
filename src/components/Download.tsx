@@ -16,8 +16,9 @@ const ANDROID = {
   href: 'https://github.com/Kuzminyo/cubechat/releases/download/apk-latest/cubechat-universal.apk',
 }
 
-// Small enough to live here, and it is text rather than a build artifact.
-const IOS = { href: '/downloads/cubechat-ios-sideload.txt', file: 'cubechat-ios-sideload.txt' }
+// The App Store listing (App Store Connect app id 6806573622). Opens the store
+// page, where the phone installs the app.
+const IOS = { href: 'https://apps.apple.com/app/id6806573622' }
 
 function StoreButton({
   href,
@@ -89,7 +90,6 @@ export default function Download() {
             />
             <StoreButton
               href={IOS.href}
-              download={IOS.file}
               top={t.download.iosTop}
               bottom={t.download.ios}
               glyph={

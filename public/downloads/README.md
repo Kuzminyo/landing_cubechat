@@ -5,14 +5,15 @@ Files served by the **Download** section. The iOS button links here with an HTML
 
 | Button  | Source | Notes |
 |---------|--------|-------|
-| Android | `Kuzminyo/cubechat` release `apk-latest` | `cubechat-universal.apk`, built by CI on every green main. Not in this repo. |
-| iOS     | `cubechat-ios-sideload.txt`               | Sideload guide (no signed .ipa is distributable). |
+| Android | none for now | "Coming soon to Google Play" label, not a link: `Kuzminyo/cubechat` went private, so its `apk-latest` release answers 404 (2026-10-27). |
+| iOS     | App Store (`IOS` in `Download.tsx`)       | `cubechat-ios-sideload.txt` is still linked from `u.html` and `c1/`. |
 
 ## Regenerate
 
-Only the iOS guide lives here, and it is hand-written. The Android APK comes
-from the app repository's `android.yml`, which upserts the rolling `apk-latest`
-prerelease — nothing to copy by hand, and nothing to bump on a release.
+Only the iOS guide lives here, and it is hand-written. The Android APK used to
+come from the app repository's rolling `apk-latest` prerelease; a private
+repository's release assets are not downloadable by visitors, so when the Play
+listing is live, put its URL in `ANDROID` and in the two QR landing pages.
 
 If a versioned APK is ever wanted on the site instead of the rolling one, the
 link is the thing to change (`ANDROID` in `src/components/Download.tsx`), not

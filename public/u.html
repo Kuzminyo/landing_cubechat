@@ -24,6 +24,8 @@
   .btns { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
   a.btn { display:block; padding:13px 16px; border-radius:12px; background:rgba(46,219,143,.14); color:var(--accent); text-decoration:none; font-weight:600; }
   a.btn.ghost { background:transparent; border:1px solid var(--line); color:var(--fg); }
+  /* Not a link: the APK release went private (404) and the Play listing is not live yet. */
+  .soon { display:block; padding:13px 16px; border-radius:12px; border:1px solid var(--line); color:var(--mut); font-weight:600; }
 </style>
 </head>
 <body>
@@ -43,7 +45,7 @@
 
   <div class="btns">
     <a class="btn" id="open" hidden>Відкрити в Cubechat</a>
-    <a class="btn ghost" href="https://github.com/Kuzminyo/cubechat/releases/download/apk-latest/cubechat-universal.apk">Android — завантажити APK</a>
+    <span class="soon">Android — скоро в Google Play</span>
     <a class="btn ghost" href="/downloads/cubechat-ios-sideload.txt">iPhone — як встановити</a>
     <a class="btn ghost" href="/">Що таке Cubechat</a>
   </div>

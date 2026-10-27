@@ -3,18 +3,12 @@ import CubeLogo from './CubeLogo'
 import { Kicker } from './ui'
 import { useI18n } from '../i18n'
 
-// The APK is not served from this repository. It is 56 MB of build output, and
-// this site is built in CI from what is committed — so a locally regenerated
-// APK never reaches the deploy and the button 404s. The app repository's
-// android.yml already publishes every green build of main to a rolling
-// `apk-latest` prerelease, which is a real URL that is always current.
-//
-// The universal build, not a per-ABI one: it carries arm64, arm32 and x86_64
-// at the cost of size, and picking wrong on a download button means an install
-// that succeeds and an app that dies on launch.
-const ANDROID = {
-  href: 'https://github.com/Kuzminyo/cubechat/releases/download/apk-latest/cubechat-universal.apk',
-}
+// No Android download until the Google Play listing is live. The button used to
+// point at the app repository's rolling `apk-latest` release, but that
+// repository went private and the URL now answers 404 (checked 2026-10-27), so
+// the button is a "coming soon" label instead of a link that fails. When the
+// listing exists, give ANDROID its store URL and the button becomes a link again.
+const ANDROID: { href?: string } = {}
 
 // The App Store listing (App Store Connect app id 6806573622). Opens the store
 // page, where the phone installs the app.
@@ -22,31 +16,20 @@ const IOS = { href: 'https://apps.apple.com/app/id6806573622' }
 
 function StoreButton({
   href,
-  download,
   glyph,
   top,
   bottom,
   primary = false,
 }: {
-  href: string
-  // Cross-origin links ignore this attribute; GitHub sends the release asset
-  // with Content-Disposition: attachment, which saves the file anyway.
-  download?: string
+  // Without an href the button is a plain label: nothing to click yet.
+  href?: string
   glyph: ReactNode
   top: string
   bottom: string
   primary?: boolean
 }) {
-  return (
-    <a
-      href={href}
-      download={download}
-      className={`group flex items-center gap-3.5 rounded-2xl px-6 py-3.5 transition-all duration-300 hover:-translate-y-0.5 ${
-        primary
-          ? 'bg-white text-[#06140d] button-glow'
-          : 'liquid-glass text-white'
-      }`}
-    >
+  const content = (
+    <>
       <span className={primary ? 'text-[#06140d]' : 'text-[#7fd9a6]'}>{glyph}</span>
       <span className="text-left leading-tight">
         <span className={`block text-[10px] uppercase tracking-widest ${primary ? 'text-[#06140d]/55' : 'text-white/45'}`}>
@@ -54,6 +37,25 @@ function StoreButton({
         </span>
         <span className="block text-[15px] font-semibold">{bottom}</span>
       </span>
+    </>
+  )
+  if (!href) {
+    return (
+      <span className="flex cursor-default items-center gap-3.5 rounded-2xl px-6 py-3.5 liquid-glass text-white/70">
+        {content}
+      </span>
+    )
+  }
+  return (
+    <a
+      href={href}
+      className={`group flex items-center gap-3.5 rounded-2xl px-6 py-3.5 transition-all duration-300 hover:-translate-y-0.5 ${
+        primary
+          ? 'bg-white text-[#06140d] button-glow'
+          : 'liquid-glass text-white'
+      }`}
+    >
+      {content}
     </a>
   )
 }
@@ -81,7 +83,7 @@ export default function Download() {
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-3.5">
             <StoreButton
               href={ANDROID.href}
-              primary
+              primary={!!ANDROID.href}
               top={t.download.androidTop}
               bottom={t.download.android}
               glyph={
@@ -90,6 +92,7 @@ export default function Download() {
             />
             <StoreButton
               href={IOS.href}
+              primary={!ANDROID.href}
               top={t.download.iosTop}
               bottom={t.download.ios}
               glyph={

@@ -84,8 +84,7 @@ export default function Hero() {
             middle of a capsule that is itself centred. `shrink-0` keeps the dot
             round once the text starts competing for width. */}
         <div
-          className="mb-7 flex items-center justify-center gap-2.5 liquid-glass rounded-full px-4 py-1.5 max-w-full"
-          style={{ animation: 'float-slow 7s ease-in-out infinite' }}
+          className="mb-7 flex items-center justify-center gap-2.5 liquid-glass rounded-full px-4 py-1.5 max-w-full animate-float-slow"
         >
           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#2edb8f] shadow-[0_0_10px_2px_rgba(46,219,143,0.8)]" />
           {/* The negative right margin cancels the trailing letter-space that
@@ -132,7 +131,7 @@ export default function Hero() {
       {/* Live mesh indicator (desktop) */}
       <div className="hidden md:flex absolute bottom-8 left-8 items-center gap-3">
         <span className="relative flex h-10 w-10 items-center justify-center rounded-full border border-white/15">
-          <span className="absolute h-10 w-10 rounded-full border border-[#2edb8f]/40" style={{ animation: 'pulse-ring 2.6s ease-out infinite' }} />
+          <span className="absolute h-10 w-10 rounded-full border border-[#2edb8f]/40 animate-pulse-ring" />
           <span className="h-2 w-2 rounded-full bg-[#2edb8f] shadow-[0_0_10px_2px_rgba(46,219,143,0.8)]" />
         </span>
         <div className="leading-tight">

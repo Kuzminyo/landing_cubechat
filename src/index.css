@@ -192,6 +192,10 @@ body {
   }
 }
 
+.animate-pulse-ring {
+  animation: pulse-ring 2.6s ease-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -202,7 +206,8 @@ body {
     transform: none;
   }
   .animate-marquee,
-  .animate-float-slow {
+  .animate-float-slow,
+  .animate-pulse-ring {
     animation: none;
   }
 }

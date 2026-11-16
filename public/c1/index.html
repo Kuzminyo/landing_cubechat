@@ -10,6 +10,8 @@
 <style>
   :root { --bg:#06140d; --fg:#ffffff; --accent:#2edb8f; --mut:rgba(255,255,255,.6); --line:rgba(255,255,255,.08); }
   * { box-sizing:border-box; }
+  /* `a.btn { display:block }` below outranks the UA's [hidden] rule. */
+  [hidden] { display:none !important; }
   html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); }
   body { font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
   .wrap { max-width:520px; margin:0 auto; padding:64px 20px 80px; text-align:center; }
@@ -21,7 +23,7 @@
   .card ol { margin:0; padding-left:20px; color:var(--mut); }
   .card li { margin:6px 0; }
   .btns { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
-  a.btn, button.btn { display:block; width:100%; padding:13px 16px; border-radius:12px; border:0; background:rgba(46,219,143,.14); color:var(--accent); text-decoration:none; font:600 16px/1.2 inherit; cursor:pointer; }
+  a.btn, button.btn { display:block; width:100%; padding:13px 16px; border-radius:12px; border:0; background:rgba(46,219,143,.14); color:var(--accent); text-decoration:none; font:inherit; font-weight:600; font-size:16px; line-height:1.2; cursor:pointer; }
   a.btn.ghost { background:transparent; border:1px solid var(--line); color:var(--fg); }
   /* Not a link: the APK release went private (404) and the Play listing is not live yet. */
   .soon { display:block; padding:13px 16px; border-radius:12px; border:1px solid var(--line); color:var(--mut); font-weight:600; }
@@ -45,7 +47,7 @@
     <a class="btn" id="open" hidden>Відкрити в Cubechat</a>
     <button class="btn" id="copy" type="button" hidden>Скопіювати картку</button>
     <span class="soon">Android — скоро в Google Play</span>
-    <a class="btn ghost" href="/downloads/cubechat-ios-sideload.txt">iPhone — як встановити</a>
+    <a class="btn ghost" href="https://apps.apple.com/app/id6806573622">iPhone — App Store</a>
     <a class="btn ghost" href="/">Що таке Cubechat</a>
   </div>
 </div>

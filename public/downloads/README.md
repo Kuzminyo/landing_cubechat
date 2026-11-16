@@ -6,7 +6,7 @@ Files served by the **Download** section. The iOS button links here with an HTML
 | Button  | Source | Notes |
 |---------|--------|-------|
 | Android | none for now | "Coming soon to Google Play" label, not a link: `Kuzminyo/cubechat` went private, so its `apk-latest` release answers 404 (2026-10-27). |
-| iOS     | App Store (`IOS` in `Download.tsx`)       | `cubechat-ios-sideload.txt` is still linked from `u.html` and `c1/`. |
+| iOS     | App Store (`IOS` in `Download.tsx`)       | `u.html` and `c1/` link the same App Store page; `cubechat-ios-sideload.txt` is no longer linked. |
 
 ## Regenerate
 

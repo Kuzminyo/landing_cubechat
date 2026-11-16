@@ -200,8 +200,8 @@ export default function MeshBackground({ className = '' }: { className?: string 
         rot.z += 0.0010
       }
 
-      // move nodes
-      for (const n of nodes) {
+      // move nodes (a reduced-motion visitor gets the still mesh)
+      for (const n of reduce ? [] : nodes) {
         n.x += n.vx
         n.y += n.vy
         if (n.x < -20) n.x = width + 20
@@ -268,12 +268,27 @@ export default function MeshBackground({ className = '' }: { className?: string 
       raf = requestAnimationFrame(frame)
     }
 
+    // One still frame: cube + mesh, no ring/packet motion. `lastFrame` is reset
+    // because frame() skips a call made less than 33ms after the previous one.
+    function drawStatic() {
+      running = true
+      lastFrame = -1000
+      frame(0)
+      running = false
+      cancelAnimationFrame(raf)
+    }
+
     function onResize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2)
       build()
+      // build() resizes the canvas, which clears it; with no loop running
+      // under reduced motion nothing would draw it again.
+      if (reduce) drawStatic()
     }
 
     function onVisibility() {
+      // Reduced motion has no loop to pause or resume.
+      if (reduce) return
       running = !document.hidden
       if (running) raf = requestAnimationFrame(frame)
       else cancelAnimationFrame(raf)
@@ -281,9 +296,7 @@ export default function MeshBackground({ className = '' }: { className?: string 
 
     build()
     if (reduce) {
-      frame(0) // one static frame (cube + mesh, no ring/packet motion)
-      running = false
-      cancelAnimationFrame(raf)
+      drawStatic()
     } else {
       raf = requestAnimationFrame(frame)
     }

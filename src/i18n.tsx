@@ -159,7 +159,6 @@ const uk = {
     android: 'Google Play',
     iosTop: 'Завантажити в',
     ios: 'App Store',
-    note: 'Android і iOS використовують справжній Bluetooth · веб і десктоп лише інтерфейс',
   },
   footer: {
     tagline:
@@ -350,7 +349,6 @@ const en: Dict = {
     android: 'Google Play',
     iosTop: 'Download on the',
     ios: 'App Store',
-    note: 'Android & iOS use real Bluetooth · web & desktop run the UI only',
   },
   footer: {
     tagline:

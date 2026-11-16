@@ -100,11 +100,6 @@ export default function Download() {
               }
             />
           </div>
-
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-4 py-2 font-mono text-[11px] text-white/45">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#f5c26b]" />
-            {t.download.note}
-          </div>
         </div>
       </div>
     </section>

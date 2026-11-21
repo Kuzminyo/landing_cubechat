@@ -1,22 +1,32 @@
 # Download artifacts
 
-Files served by the **Download** section. The iOS button links here with an HTML
-`download` attribute, so a click saves the file instead of navigating.
+What the **Download** section and the QR landing pages (`u.html`, `c1/`) link to.
 
 | Button  | Source | Notes |
 |---------|--------|-------|
-| Android | none for now | "Coming soon to Google Play" label, not a link: `Kuzminyo/cubechat` went private, so its `apk-latest` release answers 404 (2026-10-27). |
+| Android | release `apk-latest` of **this** repo, asset `cubechat.apk` | Universal APK mirrored from the app's CI. `ANDROID` in `Download.tsx`, and the two QR pages. |
 | iOS     | App Store (`IOS` in `Download.tsx`)       | `u.html` and `c1/` link the same App Store page; `cubechat-ios-sideload.txt` is no longer linked. |
 
-## Regenerate
+## Why the APK lives in a release here
 
-Only the iOS guide lives here, and it is hand-written. The Android APK used to
-come from the app repository's rolling `apk-latest` prerelease; a private
-repository's release assets are not downloadable by visitors, so when the Play
-listing is live, put its URL in `ANDROID` and in the two QR landing pages.
+`Kuzminyo/Cubechat` is private, so its own rolling `apk-latest` release answers
+404 to visitors (2026-10-27). This repository is public, and a release asset's
+URL — `releases/download/apk-latest/cubechat.apk` — stays the same when the
+asset is replaced, so updating the APK needs no commit and no site deploy.
 
-If a versioned APK is ever wanted on the site instead of the rolling one, the
-link is the thing to change (`ANDROID` in `src/components/Download.tsx`), not
-this directory: `public/downloads/*.apk` is git-ignored, and the site is built
-in CI from what is committed, so an APK dropped in here never reaches the
-deploy. That is what used to make the Android button 404.
+It is not in this directory: the site is built in CI from what is committed,
+`public/downloads/*.apk` is git-ignored, and a ~190 MB file is over GitHub's
+100 MB per-file limit anyway.
+
+## Refresh to the latest build
+
+The app's `android.yml` publishes every green main to its private `apk-latest`.
+Copy its universal APK across:
+
+```bash
+gh release download apk-latest -R Kuzminyo/Cubechat -p cubechat-universal.apk -O cubechat.apk --clobber
+gh release upload apk-latest cubechat.apk -R Kuzminyo/landing_cubechat --clobber
+```
+
+When the Play listing is live, put its URL in `ANDROID` and in the two QR pages
+instead.

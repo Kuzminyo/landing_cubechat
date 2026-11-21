@@ -3,12 +3,19 @@ import CubeLogo from './CubeLogo'
 import { Kicker } from './ui'
 import { useI18n } from '../i18n'
 
-// No Android download until the Google Play listing is live. The button used to
-// point at the app repository's rolling `apk-latest` release, but that
-// repository went private and the URL now answers 404 (checked 2026-10-27), so
-// the button is a "coming soon" label instead of a link that fails. When the
-// listing exists, give ANDROID its store URL and the button becomes a link again.
-const ANDROID: { href?: string } = {}
+// The APK, until the Google Play listing is live. The app repository is
+// private, so its own `apk-latest` release answers 404 to visitors (checked
+// 2026-10-27); the same file is mirrored to an `apk-latest` release of THIS
+// public repository, whose URL stays the same across builds — replacing the
+// asset updates the button without a site deploy. How: public/downloads/README.md.
+//
+// The universal build (~190 MB at build 1215): it runs on any phone, where a
+// wrong per-ABI pick installs fine and then dies on launch.
+//
+// When the Play listing exists, put its URL here instead.
+const ANDROID: { href?: string } = {
+  href: 'https://github.com/Kuzminyo/landing_cubechat/releases/download/apk-latest/cubechat.apk',
+}
 
 // The App Store listing (App Store Connect app id 6806573622). Opens the store
 // page, where the phone installs the app.

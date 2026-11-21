@@ -155,8 +155,8 @@ const uk = {
     title: 'Два телефони й кілька метрів.\nОсь і все налаштування.',
     subtitle:
       'Встановіть, згенеруйте ключ — і ви в мережі. Жодного екрана реєстрації, бо немає акаунта, який треба реєструвати.',
-    androidTop: 'Скоро в',
-    android: 'Google Play',
+    androidTop: 'Завантажити для',
+    android: 'Android (APK)',
     iosTop: 'Завантажити в',
     ios: 'App Store',
   },
@@ -345,8 +345,8 @@ const en: Dict = {
     title: "Two phones and a few metres.\nThat's the whole setup.",
     subtitle:
       "Install it, generate your key, and you're on the mesh. No sign-up screen, because there's no account to sign up for.",
-    androidTop: 'Coming soon to',
-    android: 'Google Play',
+    androidTop: 'Download for',
+    android: 'Android (APK)',
     iosTop: 'Download on the',
     ios: 'App Store',
   },
